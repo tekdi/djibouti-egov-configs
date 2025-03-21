@@ -577,26 +577,6 @@
                 ]
               },
               {
-                "path": "http://collection-services:8080/collection-services/payments/BPA.NC_APP_FEE/_search",
-                "queryParam": "tenantId=$.tenantId,consumerCodes=$.applicationNo",
-                "apiRequest": null,
-                "responseMapping": [
-                  {
-                    "variable": "appHeadCode",
-                    "value": "$.Payments[0].paymentDetails[0].bill.billDetails[0].billAccountDetails[0].taxHeadCode",
-                    "localisation": {
-                      "required": true,
-                      "prefix": "BPA",
-                      "module": "rainmaker-bpa"
-                    }
-                  },
-                  {
-                    "variable": "appFee",
-                    "value": "$.Payments[0].paymentDetails[0].bill.billDetails[0].billAccountDetails[0].amount"
-                  }
-                ]
-              },
-              {
                 "path": "http://egov-workflow-v2.egov:8080/egov-workflow-v2/egov-wf/process/_search",
                 "queryParam": "tenantId=$.tenantId,businessIds=$.applicationNo,history=true",
                 "apiRequest": null,
