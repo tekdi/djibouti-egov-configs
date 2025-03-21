@@ -524,13 +524,13 @@
               {
                 "variable": "plotNo",
                 "value": {
-                  "path": "$.plotInfo.plotNo"
+                  "path": "$.plotInfo.plotNumber"
                 }
               },
               {
                 "variable": "khataNo",
                 "value": {
-                  "path": "$.plotInfo.khataNo"
+                  "path": "$.plotInfo.khataNumber"
                 }
               },
               {
