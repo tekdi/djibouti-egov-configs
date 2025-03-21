@@ -203,6 +203,15 @@
             ],
             [
               {
+                "text": "{{appHeadCode}}"
+              },
+              {
+                "text": "{{appFee}}",
+                "alignment": "right"
+              }
+            ],
+            [
+              {
                 "text": "{{sanHeadCode}}"
               },
               {
