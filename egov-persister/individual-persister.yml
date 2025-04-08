@@ -49,6 +49,7 @@ serviceMaps:
             - jsonPath: $.*.gender
             - jsonPath: $.*.bloodGroup
             - jsonPath: $.*.mobileNumber
+            - jsonPath: $.*.hashedmobilenumber
             - jsonPath: $.*.altContactNumber
             - jsonPath: $.*.email
             - jsonPath: $.*.fatherName
