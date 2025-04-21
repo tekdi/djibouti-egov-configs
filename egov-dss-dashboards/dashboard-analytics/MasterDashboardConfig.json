@@ -12658,6 +12658,202 @@
               ]
             }
           ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 717,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "warehouseManagerUserSyncICCD",
+                  "name": "DSS_HEALTH_WAREHOUSE_MANAGER_USER_SYNC_RATE_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 718,
+              "name": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
+              "label": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "daysInventoryStockLastsProvinceICCD",
+                  "name": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_PROVINCE_ICCD",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 719,
+              "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
+              "label": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "inventoryStockInHandProvinceICCD",
+                  "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_PROVINCE_ICCD",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 720,
+              "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
+              "label": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "inventoryTheoreticalVsManualStockDistrictICCD",
+                  "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_DISTRICT_ICCD",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 721,
+              "name": "DSS_HEALTH_STOCK_TRANSACTIONS",
+              "label": "DSS_HEALTH_STOCK_TRANSACTIONS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "stockTransactionsBreakdownProvincialICCD",
+                  "name": "DSS_HEALTH_STOCK_TRANSACTIONS_PROVINCIAL_ICCD",
+                  "code": "",
+                  "chartType": "sideBySideBar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 722,
+              "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
+              "label": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
+              "vizType": "latlong",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "warehouseDistributionLatLongPointsICCD",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_ICCD",
+                  "code": "",
+                  "chartType": "points",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableAvlRcvdDispDistrictWiseProvincialBoardICCD",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableDaysStockLastsDistrictWiseProvincialBoardICCD",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesICCD",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableStockStatusDistrictWiseProvincialBoardICCD",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableWarNumDistrictWiseProvincialBoardICCD",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 723,
+              "name": "DSS_HEALTH_INVENTORY_SUMMARY",
+              "label": "DSS_HEALTH_INVENTORY_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "InventorySummaryByDistrictICCD",
+                  "name": "DSS_HEALTH_INVENTORY_SUMMARY_BY_DISTRICT_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -12907,6 +13103,202 @@
                   "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE_AP_ICCD",
                   "code": "",
                   "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 773,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "warehouseManagerUserSyncICCD",
+                  "name": "DSS_HEALTH_WAREHOUSE_MANAGER_USER_SYNC_RATE_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 774,
+              "name": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
+              "label": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "daysInventoryStockLastsDistrictICCD",
+                  "name": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_DISTRICT_ICCD",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 775,
+              "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
+              "label": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "inventoryStockInHandDistrictICCD",
+                  "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_DISTRICT_ICCD",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 776,
+              "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
+              "label": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "inventoryTheoreticalVsManualStockApICCD",
+                  "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_AP_ICCD",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 777,
+              "name": "DSS_HEALTH_STOCK_TRANSACTIONS",
+              "label": "DSS_HEALTH_STOCK_TRANSACTIONS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "stockTransactionsBreakdownDistrictICCD",
+                  "name": "DSS_HEALTH_STOCK_TRANSACTIONS_DISTRICT_ICCD",
+                  "code": "",
+                  "chartType": "sideBySideBar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 778,
+              "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
+              "label": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
+              "vizType": "latlong",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "warehouseDistributionLatLongPointsICCD",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_ICCD",
+                  "code": "",
+                  "chartType": "points",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableAvlRcvdDispDistrictWiseProvincialBoardICCD",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableDaysStockLastsDistrictWiseProvincialBoardICCD",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesICCD",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableStockStatusDistrictWiseProvincialBoardICCD",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableWarNumDistrictWiseProvincialBoardICCD",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 779,
+              "name": "DSS_HEALTH_INVENTORY_SUMMARY",
+              "label": "DSS_HEALTH_INVENTORY_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "InventorySummaryByAPICCD",
+                  "name": "DSS_HEALTH_INVENTORY_SUMMARY_BY_AP_ICCD",
+                  "code": "",
+                  "chartType": "table",
                   "filter": "",
                   "headers": []
                 }
