@@ -13103,6 +13103,53 @@
               ]
             }
           ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_REFERRAL_AND_SIDE_EFFECTS",
+          "vizArray": [
+            {
+              "id": 802,
+              "name": "DSS_HEALTH_REFERRAL_SUMMARY",
+              "label": "DSS_HEALTH_REFERRAL_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "charts": [
+                {
+                  "id": "referralSummaryByDistrictsICCD",
+                  "name": "DSS_HEALTH_REFERRAL_SUMMARY_BY_DISTRICTS_ICCD",
+                  "code": "",
+                  "chartType": "sideBySideBar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_REFERRAL_AND_SIDE_EFFECTS",
+          "vizArray": [
+            {
+              "id": 803,
+              "name": "DSS_HEALTH_SUMMARY_OF_REFERRED_CHILDREN",
+              "label": "DSS_HEALTH_SUMMARY_OF_REFERRED_CHILDREN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "summaryOfReferredChildrenByDistrictsICCD",
+                  "name": "DSS_HEALTH_SUMMARY_REFERRED_CHILDREN_BY_DISTRICTS_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -13795,6 +13842,53 @@
                 {
                   "id": "InventorySummaryByAPICCD",
                   "name": "DSS_HEALTH_INVENTORY_SUMMARY_BY_AP_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_REFERRAL_AND_SIDE_EFFECTS",
+          "vizArray": [
+            {
+              "id": 804,
+              "name": "DSS_HEALTH_REFERRAL_SUMMARY",
+              "label": "DSS_HEALTH_REFERRAL_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "charts": [
+                {
+                  "id": "referralSummaryByAPsICCD",
+                  "name": "DSS_HEALTH_REFERRAL_SUMMARY_BY_APS_ICCD",
+                  "code": "",
+                  "chartType": "sideBySideBar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_REFERRAL_AND_SIDE_EFFECTS",
+          "vizArray": [
+            {
+              "id": 805,
+              "name": "DSS_HEALTH_SUMMARY_OF_REFERRED_CHILDREN",
+              "label": "DSS_HEALTH_SUMMARY_OF_REFERRED_CHILDREN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "summaryOfReferredChildrenByAPsICCD",
+                  "name": "DSS_HEALTH_SUMMARY_REFERRED_CHILDREN_BY_APS_ICCD",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
