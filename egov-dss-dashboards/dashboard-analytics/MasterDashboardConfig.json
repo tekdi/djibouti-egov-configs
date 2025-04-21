@@ -12583,7 +12583,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "userSyncSummaryProvinceICCD",
+                  "id": "userSyncSummaryDistrictICCD",
                   "name": "DSS_HEALTH_USER_SYNC_SUMMARY_ICCD",
                   "code": "",
                   "chartType": "table",
