@@ -12724,8 +12724,8 @@
               },
               {
                 "id": 744,
-                "name": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT",
-                "label": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT",
+                "name": "DSS_HEALTH_COMPLAINTS_AVG_TIME_BY_DISTRICT",
+                "label": "DSS_HEALTH_COMPLAINTS_AVG_TIME_BY_DISTRICT",
                 "vizType": "chart",
                 "noUnit": true,
                 "isCollapsible": false,
