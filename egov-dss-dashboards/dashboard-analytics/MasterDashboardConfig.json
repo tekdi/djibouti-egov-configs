@@ -12430,7 +12430,7 @@
             "isCollapsible": false,
             "charts": [
               {
-                "id": "distributorSyncSummaryProvinceICCD",
+                "id": "userSyncSummaryProvinceICCD",
                 "name": "DSS_HEALTH_USER_SYNC_SUMMARY_ICCD",
                 "code": "",
                 "chartType": "table",
@@ -12470,24 +12470,6 @@
         "name": "DSS_HEALTH_DATA_QUALITY",
         "vizArray": [
           {
-            "id": 790,
-            "name": "DSS_HEALTH_LOCATION_NOT_ENABLED",
-            "label": "DSS_HEALTH_LOCATION_NOT_ENABLED",
-            "vizType": "chart",
-            "noUnit": true,
-            "isCollapsible": false,
-            "charts": [
-              {
-                "id": "locationNotEnabledByDistrictICCD",
-                "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT_ICCD",
-                "code": "",
-                "chartType": "bar",
-                "filter": "",
-                "headers": []
-              }
-            ]
-          },
-          {
             "id": 791,
             "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
             "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
@@ -12504,13 +12486,7 @@
                 "headers": []
               }
             ]
-          }
-        ]
-      },
-      {
-        "row": 4,
-        "name": "DSS_HEALTH_DATA_QUALITY",
-        "vizArray": [
+          },
           {
             "id": 792,
             "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
@@ -12528,7 +12504,13 @@
                 "headers": []
               }
             ]
-          },
+          }  
+        ]
+      },
+      {
+        "row": 4,
+        "name": "DSS_HEALTH_DATA_QUALITY",
+        "vizArray": [
           {
             "id": 793,
             "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CHILDREN",
@@ -12601,7 +12583,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "distributorSyncSummaryDistrictICCD",
+                  "id": "userSyncSummaryProvinceICCD",
                   "name": "DSS_HEALTH_USER_SYNC_SUMMARY_ICCD",
                   "code": "",
                   "chartType": "table",
@@ -12641,24 +12623,6 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 797,
-              "name": "DSS_HEALTH_LOCATION_NOT_ENABLED",
-              "label": "DSS_HEALTH_LOCATION_NOT_ENABLED",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "locationNotEnabledByAPICCD",
-                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_AP_ICCD",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
               "id": 798,
               "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
               "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
@@ -12675,13 +12639,7 @@
                   "headers": []
                 }
               ]
-            }
-          ]
-        },
-        {
-          "row": 4,
-          "name": "DSS_HEALTH_DATA_QUALITY",
-          "vizArray": [
+            },
             {
               "id": 799,
               "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
@@ -12699,7 +12657,14 @@
                   "headers": []
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+           
             {
               "id": 800,
               "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CHILDREN",
