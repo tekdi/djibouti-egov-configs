@@ -12935,6 +12935,32 @@
           ]
         },
         {
+          "row": 2,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 761,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "unsuccessfulAdministrationsMap",
+                  "name": "DASHBOARD_MAP_UNSUCCESSFUL_ADMINISTRATIONS",
+                  "code": "",
+                  "moduleName": "iccd-maps",
+                  "pageName": "unsuccessful-administrations-map",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "row": 1,
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
