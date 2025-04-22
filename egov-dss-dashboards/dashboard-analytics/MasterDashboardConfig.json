@@ -13368,6 +13368,144 @@
         },
         {
           "row": 1,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 788,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "userSyncSummaryProvinceICCD",
+                  "name": "DSS_HEALTH_USER_SYNC_SUMMARY_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 789,
+              "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "label": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "housesWithMoreThanTwentyMembersByDistrictICCD",
+                  "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_DISTRICT_ICCD",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 791,
+              "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "entriesDoneByWMsDistrictICCD",
+                  "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_DISTRICT_ICCD",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 792,
+              "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
+              "label": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "incompleteRecordsByDistrictICCD",
+                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN_ICCD",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 793,
+              "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CHILDREN",
+              "label": "DSS_HEALTH_SUSPECTED_FRAUDS_CHILDREN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "suspectedFraudsByDistrictICCD",
+                  "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CHILDREN_ICCD",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 794,
+              "name": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY",
+              "label": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dataQualityRecordsSummaryDistrictICCD",
+                  "name": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
           "name": "DSS_HEALTH_REFERRAL_AND_SIDE_EFFECTS",
           "vizArray": [
             {
@@ -14288,6 +14426,146 @@
                 {
                   "id": "InventorySummaryByAPICCD",
                   "name": "DSS_HEALTH_INVENTORY_SUMMARY_BY_AP_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 795,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "userSyncSummaryDistrictICCD",
+                  "name": "DSS_HEALTH_USER_SYNC_SUMMARY_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 796,
+              "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "label": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "housesWithMoreThanTwentyMembersByAPICCD",
+                  "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_AP_ICCD",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 798,
+              "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "entriesDoneByWMsApICCD",
+                  "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_AP_ICCD",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 799,
+              "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
+              "label": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "incompleteRecordsByAPICCD",
+                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN_ICCD",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+
+            {
+              "id": 800,
+              "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CHILDREN",
+              "label": "DSS_HEALTH_SUSPECTED_FRAUDS_CHILDREN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "suspectedFraudsByAPICCD",
+                  "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CHILDREN_ICCD",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 801,
+              "name": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY",
+              "label": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dataQualityRecordsSummaryAPICCD",
+                  "name": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY_ICCD",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
