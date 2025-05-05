@@ -1,0 +1,189 @@
+ServiceMaps:
+  serviceName: Public Service
+  version: 1.0.0
+  mappings:
+    - topic: save-public-service-application
+      configKey: INDEX
+      indexes:
+        - name: public-service-index
+          type: general
+          id: $.applicationNumber,$.tenantId
+          jsonPath: $
+          timeStampField: $.applicationDate
+          customJsonMapping:
+            indexMapping: |
+              {
+                "Data": {
+                  "applicationType": "",
+                  "applicationNumber": "",
+                  "applicationDate": "",
+                  "status": "",
+                  "planPermitNumber": "",
+                  "permitApplicationDate": "",
+                  "transactionNumber": "",
+                  "tenantId": "",
+                  "applicantName": "",
+                  "serviceType": "",
+                  "licenseType": "",
+                  "tradeCommencementDate": "",
+                  "tradeName": "",
+                  "tradeStructureSubType": "",
+                  "tradeStructureType": "",
+                  "tradeCategory": "",
+                  "tradeSubType": "",
+                  "tradeType": "",
+                  "address": {
+                    "addressLine1": "",
+                    "addressLine2": "",
+                    "landmark": "",
+                    "city": "",
+                    "pincode": ""
+                  },
+                  "workflowStatus": "",
+                  "@timestamp": "timestamp"
+                }
+              }
+            fieldMapping:
+              - inJsonPath: $.applicationType
+                outJsonPath: $.Data.applicationType
+              - inJsonPath: $.applicationNumber
+                outJsonPath: $.Data.applicationNumber
+              - inJsonPath: $.applicationDate
+                outJsonPath: $.Data.applicationDate
+              - inJsonPath: $.status
+                outJsonPath: $.Data.status
+              - inJsonPath: $.planPermitNumber
+                outJsonPath: $.Data.planPermitNumber
+              - inJsonPath: $.permitApplicationDate
+                outJsonPath: $.Data.permitApplicationDate
+              - inJsonPath: $.transactionNumber
+                outJsonPath: $.Data.transactionNumber
+              - inJsonPath: $.tenantId
+                outJsonPath: $.Data.tenantId
+              - inJsonPath: $.applicantName
+                outJsonPath: $.Data.applicantName
+              - inJsonPath: $.serviceType
+                outJsonPath: $.Data.serviceType
+              - inJsonPath: $.licenseType
+                outJsonPath: $.Data.licenseType
+              - inJsonPath: $.tradeCommencementDate
+                outJsonPath: $.Data.tradeCommencementDate
+              - inJsonPath: $.tradeName
+                outJsonPath: $.Data.tradeName
+              - inJsonPath: $.tradeStructureSubType
+                outJsonPath: $.Data.tradeStructureSubType
+              - inJsonPath: $.tradeStructureType
+                outJsonPath: $.Data.tradeStructureType
+              - inJsonPath: $.tradeUnits.tradeCategory.name
+                outJsonPath: $.Data.tradeCategory
+              - inJsonPath: $.tradeUnits.tradeSubType.name
+                outJsonPath: $.Data.tradeSubType
+              - inJsonPath: $.tradeUnits.tradeType.name
+                outJsonPath: $.Data.tradeType
+              - inJsonPath: $.address.addressLine1
+                outJsonPath: $.Data.address.addressLine1
+              - inJsonPath: $.address.addressLine2
+                outJsonPath: $.Data.address.addressLine2
+              - inJsonPath: $.address.landmark
+                outJsonPath: $.Data.address.landmark
+              - inJsonPath: $.address.city
+                outJsonPath: $.Data.address.city
+              - inJsonPath: $.address.pincode
+                outJsonPath: $.Data.address.pincode
+              - inJsonPath: $.workflowStatus
+                outJsonPath: $.Data.workflowStatus
+              - inJsonPath: $.@timestamp
+                outJsonPath: $.Data.@timestamp
+
+    - topic: update-public-service-application
+      configKey: INDEX
+      indexes:
+        - name: public-service-index
+          type: general
+          id: $.applicationNumber,$.tenantId
+          jsonPath: $
+          timeStampField: $.applicationDate
+          customJsonMapping:
+            indexMapping: |
+              {
+                "Data": {
+                  "applicationType": "",
+                  "applicationNumber": "",
+                  "applicationDate": "",
+                  "status": "",
+                  "planPermitNumber": "",
+                  "permitApplicationDate": "",
+                  "transactionNumber": "",
+                  "tenantId": "",
+                  "applicantName": "",
+                  "serviceType": "",
+                  "licenseType": "",
+                  "tradeCommencementDate": "",
+                  "tradeName": "",
+                  "tradeStructureSubType": "",
+                  "tradeStructureType": "",
+                  "tradeCategory": "",
+                  "tradeSubType": "",
+                  "tradeType": "",
+                  "address": {
+                    "addressLine1": "",
+                    "addressLine2": "",
+                    "landmark": "",
+                    "city": "",
+                    "pincode": ""
+                  },
+                  "workflowStatus": "",
+                  "@timestamp": "timestamp"
+                }
+              }
+            fieldMapping:
+              - inJsonPath: $.applicationType
+                outJsonPath: $.Data.applicationType
+              - inJsonPath: $.applicationNumber
+                outJsonPath: $.Data.applicationNumber
+              - inJsonPath: $.applicationDate
+                outJsonPath: $.Data.applicationDate
+              - inJsonPath: $.status
+                outJsonPath: $.Data.status
+              - inJsonPath: $.planPermitNumber
+                outJsonPath: $.Data.planPermitNumber
+              - inJsonPath: $.permitApplicationDate
+                outJsonPath: $.Data.permitApplicationDate
+              - inJsonPath: $.transactionNumber
+                outJsonPath: $.Data.transactionNumber
+              - inJsonPath: $.tenantId
+                outJsonPath: $.Data.tenantId
+              - inJsonPath: $.applicantName
+                outJsonPath: $.Data.applicantName
+              - inJsonPath: $.serviceType
+                outJsonPath: $.Data.serviceType
+              - inJsonPath: $.licenseType
+                outJsonPath: $.Data.licenseType
+              - inJsonPath: $.tradeCommencementDate
+                outJsonPath: $.Data.tradeCommencementDate
+              - inJsonPath: $.tradeName
+                outJsonPath: $.Data.tradeName
+              - inJsonPath: $.tradeStructureSubType
+                outJsonPath: $.Data.tradeStructureSubType
+              - inJsonPath: $.tradeStructureType
+                outJsonPath: $.Data.tradeStructureType
+              - inJsonPath: $.tradeUnits.tradeCategory.name
+                outJsonPath: $.Data.tradeCategory
+              - inJsonPath: $.tradeUnits.tradeSubType.name
+                outJsonPath: $.Data.tradeSubType
+              - inJsonPath: $.tradeUnits.tradeType.name
+                outJsonPath: $.Data.tradeType
+              - inJsonPath: $.address.addressLine1
+                outJsonPath: $.Data.address.addressLine1
+              - inJsonPath: $.address.addressLine2
+                outJsonPath: $.Data.address.addressLine2
+              - inJsonPath: $.address.landmark
+                outJsonPath: $.Data.address.landmark
+              - inJsonPath: $.address.city
+                outJsonPath: $.Data.address.city
+              - inJsonPath: $.address.pincode
+                outJsonPath: $.Data.address.pincode
+              - inJsonPath: $.workflowStatus
+                outJsonPath: $.Data.workflowStatus
+              - inJsonPath: $.@timestamp
+                outJsonPath: $.Data.@timestamp
