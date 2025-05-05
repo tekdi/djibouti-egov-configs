@@ -41,7 +41,7 @@ serviceMaps:
           jsonMaps:
             - jsonPath: $.Application.applicants.*.id
             - jsonPath: $.Application.applicants.*.type
-            - jsonPath: $.Application.applicants.*.applicationId
+            - jsonPath: $.Application.id
             - jsonPath: $.Application.applicants.*.userId
             - jsonPath: $.Application.applicants.*.name
             - jsonPath: $.Application.applicants.*.mobileNumber
