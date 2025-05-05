@@ -11,7 +11,7 @@ serviceMaps:
               id, tenant_id, module, business_service, status, channel, application_number, workflow_status, service_code,
               service_details, additional_details, address, workflow, createdby, last_modifiedby, created_at, updated_at
             )
-            VALUES (?::uuid, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+            VALUES (?::uuid, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, to_timestamp(? / 1000), to_timestamp(? / 1000));
           basePath: $.Application
           jsonMaps:
             - jsonPath: $.Application.id
@@ -80,7 +80,7 @@ serviceMaps:
         - query: >
             UPDATE application
             SET tenant_id = ?, module = ?, business_service = ?, status = ?, channel = ?, workflow_status = ?,
-                service_details = ?, additional_details = ?, address = ?, workflow = ?, last_modifiedby = ?, updated_at = ?
+                service_details = ?, additional_details = ?, address = ?, workflow = ?, last_modifiedby = ?, updated_at = to_timestamp(? / 1000) 
             WHERE id = ?;
           basePath: $.Application
           jsonMaps:
