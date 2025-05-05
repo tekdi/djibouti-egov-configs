@@ -1,153 +1,119 @@
 serviceMaps:
- serviceName: public Service
- mappings:
- - version: 1.0
-   name: public service create
-   description: create public service
-   fromTopic: save-public-service-application
-   queryMaps: 
-    - query: INSERT INTO application (id, tenant_id, module, business_service, status, channel, application_number,workflow_status, service_code,service_details, additional_details, address, workflow,createdby, last_modifiedby, created_at, updated_at)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
-      basePath: $.Application.*
-      jsonMaps:
-       
-       - jsonPath: $.id
-         
-       - jsonPath: $.TenantId
-         
-       - jsonPath: $.Module
-         
-       - jsonPath: $.BusinessService
-         
-       - jsonPath: $.Status
+  serviceName: public Service
+  mappings:
+    - version: 1.0
+      name: public service create
+      description: create public service
+      fromTopic: save-public-service-application
+      queryMaps:
+        - query: > 
+            INSERT INTO application (
+            id, tenant_id, module, business_service, status, channel, application_number, workflow_status, service_code,
+            service_details, additional_details, address, workflow, createdby, last_modifiedby, created_at, updated_at
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+          basePath: $.Application
+          jsonMaps:
+            - jsonPath: $.id
+            - jsonPath: $.tenantId
+            - jsonPath: $.module
+            - jsonPath: $.businessService
+            - jsonPath: $.status
+            - jsonPath: $.channel
+            - jsonPath: $.applicationNumber
+            - jsonPath: $.workflowStatus
+            - jsonPath: $.serviceCode
+            - jsonPath: $.serviceDetails
+            - jsonPath: $.additionalDetails
+            - jsonPath: $.address
+            - jsonPath: $.workflow
+            - jsonPath: $.auditDetails.createdBy
+            - jsonPath: $.auditDetails.lastModifiedBy
+            - jsonPath: $.auditDetails.createdTime
+            - jsonPath: $.auditDetails.lastModifiedTime
 
-       - jsonPath: $.Channel
-         
-       - jsonPath: $.ApplicationNumber
+        - query: >
+            INSERT INTO applicant (
+              id, type, application_id, user_id, name, mobile_number, email_id, prefix, active
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+          basePath: $.Application.applicants.*
+          jsonMaps:
+            - jsonPath: $.id
+            - jsonPath: $.type
+            - jsonPath: $.applicationId
+            - jsonPath: $.userId
+            - jsonPath: $.name
+            - jsonPath: $.mobileNumber
+            - jsonPath: $.emailId
+            - jsonPath: $.prefix
+            - jsonPath: $.active
 
-       - jsonPath: $.WorkflowStatus
+        - query: >
+            INSERT INTO reference (
+              id, reference_type, module, tenant_id, reference_no, active, application_id
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?);
+          basePath: $.Application.reference
+          jsonMaps:
+            - jsonPath: $.referenceId
+            - jsonPath: $.referenceType
+            - jsonPath: $.module
+            - jsonPath: $.tenantId
+            - jsonPath: $.referenceNo
+            - jsonPath: $.active
+            - jsonPath: $root.Application.id   # Get application.id here
 
-       - jsonPath: $.serviceCode
+    - version: 1.0
+      description: Updates a product variant
+      fromTopic: update-public-service-application
+      isTransaction: true
+      queryMaps:
+        - query: >
+            UPDATE application
+            SET tenant_id = ?, module = ?, business_service = ?, status = ?, channel = ?, workflow_status = ?,
+                service_details = ?, additional_details = ?, address = ?, workflow = ?, last_modifiedby = ?, updated_at = ?
+            WHERE id = ?;
+          basePath: $.Application
+          jsonMaps:
+            - jsonPath: $.tenantId
+            - jsonPath: $.module
+            - jsonPath: $.businessService
+            - jsonPath: $.status
+            - jsonPath: $.channel
+            - jsonPath: $.workflowStatus
+            - jsonPath: $.serviceDetails
+            - jsonPath: $.additionalDetails
+            - jsonPath: $.address
+            - jsonPath: $.workflow
+            - jsonPath: $.auditDetails.lastModifiedBy
+            - jsonPath: $.auditDetails.lastModifiedTime
+            - jsonPath: $.id
 
-       - jsonPath: $.serviceDetailsJSON
+        - query: >
+            UPDATE applicant
+            SET type = ?, user_id = ?, name = ?, mobile_number = ?, email_id = ?, prefix = ?, active = ?
+            WHERE id = ?;
+          basePath: $.Application.applicants.*
+          jsonMaps:
+            - jsonPath: $.type
+            - jsonPath: $.userId
+            - jsonPath: $.name
+            - jsonPath: $.mobileNumber
+            - jsonPath: $.emailId
+            - jsonPath: $.prefix
+            - jsonPath: $.active
+            - jsonPath: $.id
 
-       - jsonPath: $.additionalDetailsJSON
-
-       - jsonPath: $.addressJSON
-
-       - jsonPath: $.workflowJSON
-
-       - jsonPath: $.auditDetails.createdBy
-
-       - jsonPath: $.auditDetails.lastModifiedBy
-
-       - jsonPath: $.auditDetails.createdTime
-
-       - jsonPath: $.auditDetails.lastModifiedTime
-
-
-    - query: INSERT INTO reference (id, reference_type, module, tenant_id, reference_no, active, application_id) VALUES (?, ?, ?, ?, ?, ?, ?)
-      basePath: $.Application
-      jsonMaps:
-       - jsonPath: $.reference.id
-       
-       - jsonPath: $.reference.ReferenceType
-         
-       - jsonPath: $.reference.Module
-
-       - jsonPath: $.reference.TenantId
-         
-       - jsonPath: $.reference.ReferenceNo
-         
-       - jsonPath: $.Application.Active
-
-       - jsonPath: $.Application.id
-
-
-    - query: INSERT INTO applicant ( id, type, application_id, user_id, name, mobile_number, email_id, prefix, active) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-      basePath: $.Application.applicants.*
-      jsonMaps:
-
-       - jsonPath: $.id
-      
-       - jsonPath: $.type
-
-       - jsonPath: $.userId
-
-       - jsonPath: $.name
-
-       - jsonPath: $.mobileNumber
-      
-       - jsonPath: $.emailId
-
-       - jsonPath: $.prefix
-
-       - jsonPath: $.active
-
- - version: 1.0
-   description: Updates a product variant
-   fromTopic: update-public-service-application
-   isTransaction: true
-   queryMaps:
-    - query: UPDATE application SET tenant_id = ?, module = ?, business_service = ?, status = ?, channel = ?, workflow_status = ?, service_details = ?, additional_details = ?, address = ?, workflow = ?, last_modifiedby = ?, updated_at = ? WHERE id = ?
-      basePath: $.Application
-      jsonMaps:
-        - jsonPath: $.tenantId
-
-        - jsonPath: $.Module
-
-        - jsonPath: $.BusinessService
-
-        - jsonPath: $.Status
-
-        - jsonPath: $.Channel
-
-        - jsonPath: $.WorkflowStatus
-
-        - jsonPath: $.serviceDetailsJSON
-
-        - jsonPath: $.additionalDetailsJSON
-
-        - jsonPath: $.addressJSON
-
-        - jsonPath: $.workflow
-
-        - jsonPath: $.auditDetails.lastModifiedBy
-
-        - jsonPath: $.auditDetails.lastModifiedTime
-
-        - jsonPath: $.*.id
-
-
-    - query: UPDATE reference SET reference_type = ?, module = ?, tenant_id = ?, reference_no = ?, active = ? WHERE id = ?
-      basePath: $.Application
-      jsonMaps:
-        - jsonPath: $.reference.ReferenceType
-
-        - jsonPath: $.reference.Module
-
-        - jsonPath: $.reference.TenantId
-
-        - jsonPath: $.reference.ReferenceNo
-
-        - jsonPath: $.reference.Active
-
-        - jsonPath: $.reference.id
-
-    - query: UPDATE applicant SET type = ?, user_id = ?, name = ?, mobile_number = ?, email_id = ?, prefix = ?, active = ? WHERE id = ?
-      basePath: $.Application.applicants.*
-      jsonMaps:
-        - jsonPath: $.Type
-
-        - jsonPath: $.UserId
-
-        - jsonPath: $.Name
-
-        - jsonPath: $.MobileNumber
-
-        - jsonPath: $.EmailId
-
-        - jsonPath: $.Prefix
-
-        - jsonPath: $.Active
-
-        - jsonPath: $.Id
+        - query: >
+            UPDATE reference
+            SET reference_type = ?, module = ?, tenant_id = ?, reference_no = ?, active = ?
+            WHERE id = ?;
+          basePath: $.Application.reference
+          jsonMaps:
+            - jsonPath: $.referenceType
+            - jsonPath: $.module
+            - jsonPath: $.tenantId
+            - jsonPath: $.referenceNo
+            - jsonPath: $.active
+            - jsonPath: $.referenceId
