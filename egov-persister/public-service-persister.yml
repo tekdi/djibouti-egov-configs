@@ -11,7 +11,7 @@ serviceMaps:
               id, tenant_id, module, business_service, status, channel, application_number, workflow_status, service_code,
               service_details, additional_details, address, workflow, createdby, last_modifiedby, created_at, updated_at
             )
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+            VALUES (?::uuid, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.Application
           jsonMaps:
             - jsonPath: $.Application.id
@@ -24,9 +24,17 @@ serviceMaps:
             - jsonPath: $.Application.workflowStatus
             - jsonPath: $.Application.serviceCode
             - jsonPath: $.Application.serviceDetails
+              type: JSON
+              dbType: JSONB
             - jsonPath: $.Application.additionalDetails
+              type: JSON
+              dbType: JSONB
             - jsonPath: $.Application.address
+              type: JSON
+              dbType: JSONB
             - jsonPath: $.Application.workflow
+              type: JSON
+              dbType: JSONB
             - jsonPath: $.Application.auditDetails.createdBy
             - jsonPath: $.Application.auditDetails.lastModifiedBy
             - jsonPath: $.Application.auditDetails.createdTime
@@ -36,7 +44,7 @@ serviceMaps:
             INSERT INTO applicant (
               id, type, application_id, user_id, name, mobile_number, email_id, prefix, active
             )
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+            VALUES (?::uuid, ?, ?::uuid, ?, ?, ?, ?, ?, ?);
           basePath: $.Application.applicants.*
           jsonMaps:
             - jsonPath: $.Application.applicants.*.id
@@ -53,7 +61,7 @@ serviceMaps:
             INSERT INTO reference (
               id, reference_type, module, tenant_id, reference_no, active, application_id
             )
-            VALUES (?, ?, ?, ?, ?, ?, ?);
+            VALUES (?::uuid, ?, ?, ?, ?, ?, ?::uuid);
           basePath: $.Application.reference
           jsonMaps:
             - jsonPath: $.Application.reference.referenceId
@@ -83,9 +91,17 @@ serviceMaps:
             - jsonPath: $.Application.channel
             - jsonPath: $.Application.workflowStatus
             - jsonPath: $.Application.serviceDetails
+              type: JSON
+              dbType: JSONB
             - jsonPath: $.Application.additionalDetails
+              type: JSON
+              dbType: JSONB
             - jsonPath: $.Application.address
+              type: JSON
+              dbType: JSONB
             - jsonPath: $.Application.workflow
+              type: JSON
+              dbType: JSONB
             - jsonPath: $.Application.auditDetails.lastModifiedBy
             - jsonPath: $.Application.auditDetails.lastModifiedTime
             - jsonPath: $.Application.id
