@@ -81,7 +81,7 @@ serviceMaps:
             UPDATE application
             SET tenant_id = ?, module = ?, business_service = ?, status = ?, channel = ?, workflow_status = ?,
                 service_details = ?, additional_details = ?, address = ?, workflow = ?, last_modifiedby = ?, updated_at = to_timestamp(? / 1000) 
-            WHERE id = ?;
+            WHERE id = ?::uuid;
           basePath: $.Application
           jsonMaps:
             - jsonPath: $.Application.tenantId
@@ -109,7 +109,7 @@ serviceMaps:
         - query: >
             UPDATE applicant
             SET type = ?, user_id = ?, name = ?, mobile_number = ?, email_id = ?, prefix = ?, active = ?
-            WHERE id = ?;
+            WHERE id = ?::uuid;
           basePath: $.Application.applicants.*
           jsonMaps:
             - jsonPath: $.Application.applicants.*.type
@@ -124,7 +124,7 @@ serviceMaps:
         - query: >
             UPDATE reference
             SET reference_type = ?, module = ?, tenant_id = ?, reference_no = ?, active = ?
-            WHERE id = ?;
+            WHERE id = ?::uuid;
           basePath: $.Application.reference
           jsonMaps:
             - jsonPath: $.Application.reference.referenceType
