@@ -14,23 +14,23 @@ serviceMaps:
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.Application
           jsonMaps:
-            - jsonPath: $.id
-            - jsonPath: $.tenantId
-            - jsonPath: $.module
-            - jsonPath: $.businessService
-            - jsonPath: $.status
-            - jsonPath: $.channel
-            - jsonPath: $.applicationNumber
-            - jsonPath: $.workflowStatus
-            - jsonPath: $.serviceCode
-            - jsonPath: $.serviceDetails
-            - jsonPath: $.additionalDetails
-            - jsonPath: $.address
-            - jsonPath: $.workflow
-            - jsonPath: $.auditDetails.createdBy
-            - jsonPath: $.auditDetails.lastModifiedBy
-            - jsonPath: $.auditDetails.createdTime
-            - jsonPath: $.auditDetails.lastModifiedTime
+            - jsonPath: $.Application.id
+            - jsonPath: $.Application.tenantId
+            - jsonPath: $.Application.module
+            - jsonPath: $.Application.businessService
+            - jsonPath: $.Application.status
+            - jsonPath: $.Application.channel
+            - jsonPath: $.Application.applicationNumber
+            - jsonPath: $.Application.workflowStatus
+            - jsonPath: $.Application.serviceCode
+            - jsonPath: $.Application.serviceDetails
+            - jsonPath: $.Application.additionalDetails
+            - jsonPath: $.Application.address
+            - jsonPath: $.Application.workflow
+            - jsonPath: $.Application.auditDetails.createdBy
+            - jsonPath: $.Application.auditDetails.lastModifiedBy
+            - jsonPath: $.Application.auditDetails.createdTime
+            - jsonPath: $.Application.auditDetails.lastModifiedTime
 
         - query: >
             INSERT INTO applicant (
@@ -39,15 +39,15 @@ serviceMaps:
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.Application.applicants.*
           jsonMaps:
-            - jsonPath: $.id
-            - jsonPath: $.type
-            - jsonPath: $.applicationId
-            - jsonPath: $.userId
-            - jsonPath: $.name
-            - jsonPath: $.mobileNumber
-            - jsonPath: $.emailId
-            - jsonPath: $.prefix
-            - jsonPath: $.active
+            - jsonPath: $.Application.applicants.*.id
+            - jsonPath: $.Application.applicants.*.type
+            - jsonPath: $.Application.applicants.*.applicationId
+            - jsonPath: $.Application.applicants.*.userId
+            - jsonPath: $.Application.applicants.*.name
+            - jsonPath: $.Application.applicants.*.mobileNumber
+            - jsonPath: $.Application.applicants.*.emailId
+            - jsonPath: $.Application.applicants.*.prefix
+            - jsonPath: $.Application.applicants.*.active
 
         - query: >
             INSERT INTO reference (
@@ -56,12 +56,12 @@ serviceMaps:
             VALUES (?, ?, ?, ?, ?, ?, ?);
           basePath: $.Application.reference
           jsonMaps:
-            - jsonPath: $.referenceId
-            - jsonPath: $.referenceType
-            - jsonPath: $.module
-            - jsonPath: $.tenantId
-            - jsonPath: $.referenceNo
-            - jsonPath: $.active
+            - jsonPath: $.Application.reference.referenceId
+            - jsonPath: $.Application.reference.referenceType
+            - jsonPath: $.Application.reference.module
+            - jsonPath: $.Application.reference.tenantId
+            - jsonPath: $.Application.reference.referenceNo
+            - jsonPath: $.Application.reference.active
             - jsonPath: $.Application.id  # Corrected to $.Application.id
 
     - version: 1.0
@@ -76,19 +76,19 @@ serviceMaps:
             WHERE id = ?;
           basePath: $.Application
           jsonMaps:
-            - jsonPath: $.tenantId
-            - jsonPath: $.module
-            - jsonPath: $.businessService
-            - jsonPath: $.status
-            - jsonPath: $.channel
-            - jsonPath: $.workflowStatus
-            - jsonPath: $.serviceDetails
-            - jsonPath: $.additionalDetails
-            - jsonPath: $.address
-            - jsonPath: $.workflow
-            - jsonPath: $.auditDetails.lastModifiedBy
-            - jsonPath: $.auditDetails.lastModifiedTime
-            - jsonPath: $.id
+            - jsonPath: $.Application.tenantId
+            - jsonPath: $.Application.module
+            - jsonPath: $.Application.businessService
+            - jsonPath: $.Application.status
+            - jsonPath: $.Application.channel
+            - jsonPath: $.Application.workflowStatus
+            - jsonPath: $.Application.serviceDetails
+            - jsonPath: $.Application.additionalDetails
+            - jsonPath: $.Application.address
+            - jsonPath: $.Application.workflow
+            - jsonPath: $.Application.auditDetails.lastModifiedBy
+            - jsonPath: $.Application.auditDetails.lastModifiedTime
+            - jsonPath: $.Application.id
 
         - query: >
             UPDATE applicant
@@ -96,14 +96,14 @@ serviceMaps:
             WHERE id = ?;
           basePath: $.Application.applicants.*
           jsonMaps:
-            - jsonPath: $.type
-            - jsonPath: $.userId
-            - jsonPath: $.name
-            - jsonPath: $.mobileNumber
-            - jsonPath: $.emailId
-            - jsonPath: $.prefix
-            - jsonPath: $.active
-            - jsonPath: $.id
+            - jsonPath: $.Application.applicants.*.type
+            - jsonPath: $.Application.applicants.*.userId
+            - jsonPath: $.Application.applicants.*.name
+            - jsonPath: $.Application.applicants.*.mobileNumber
+            - jsonPath: $.Application.applicants.*.emailId
+            - jsonPath: $.Application.applicants.*.prefix
+            - jsonPath: $.Application.applicants.*.active
+            - jsonPath: $.Application.applicants.*.id
 
         - query: >
             UPDATE reference
@@ -111,9 +111,9 @@ serviceMaps:
             WHERE id = ?;
           basePath: $.Application.reference
           jsonMaps:
-            - jsonPath: $.referenceType
-            - jsonPath: $.module
-            - jsonPath: $.tenantId
-            - jsonPath: $.referenceNo
-            - jsonPath: $.active
-            - jsonPath: $.referenceId
+            - jsonPath: $.Application.reference.referenceType
+            - jsonPath: $.Application.reference.module
+            - jsonPath: $.Application.reference.tenantId
+            - jsonPath: $.Application.reference.referenceNo
+            - jsonPath: $.Application.reference.active
+            - jsonPath: $.Application.reference.referenceId
