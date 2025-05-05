@@ -6,10 +6,10 @@ serviceMaps:
       description: create public service
       fromTopic: save-public-service-application
       queryMaps:
-        - query: > 
+        - query: >
             INSERT INTO application (
-            id, tenant_id, module, business_service, status, channel, application_number, workflow_status, service_code,
-            service_details, additional_details, address, workflow, createdby, last_modifiedby, created_at, updated_at
+              id, tenant_id, module, business_service, status, channel, application_number, workflow_status, service_code,
+              service_details, additional_details, address, workflow, createdby, last_modifiedby, created_at, updated_at
             )
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.Application
@@ -62,7 +62,7 @@ serviceMaps:
             - jsonPath: $.tenantId
             - jsonPath: $.referenceNo
             - jsonPath: $.active
-            - jsonPath: $root.Application.id   # Get application.id here
+            - jsonPath: $.Application.id  # Corrected to $.Application.id
 
     - version: 1.0
       description: Updates a product variant
