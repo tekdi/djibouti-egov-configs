@@ -11,7 +11,7 @@ ServiceMaps:
           jsonPath: $.Application
           timeStampField: $.auditDetails.createdTime
           customJsonMapping:
-            indexMapping: {"Data": {"id": "","tenantId": "","module": "","businessService": "","status": "","channel": "","applicationNumber": "","reference": {},"workflowStatus": "","serviceCode": "","serviceDetails": {},"applicants": [],"additionalDetails": {},"address": {},"workflow": {"state": {}, "action": "", "assignees": []},"auditDetails": {},"processInstance": {},"@timestamp": "timestamp"}}
+            indexMapping: {"Data": {"id": "","tenantId": "","module": "","businessService": "","status": "","channel": "","applicationNumber": "","reference": {},"workflowStatus": "","serviceCode": "","serviceDetails": {},"applicants": [],"additionalDetails": {},"address": {},"workflow": {"comment": "", "action": "", "assignees": []},"auditDetails": {},"processInstance": {},"@timestamp": "timestamp"}}
             fieldMapping:
               - inJsonPath: $.id
                 outJsonPath: $.Data.id
@@ -41,8 +41,8 @@ ServiceMaps:
                 outJsonPath: $.Data.additionalDetails
               - inJsonPath: $.address
                 outJsonPath: $.Data.address
-              - inJsonPath: $.workflow.state
-                outJsonPath: $.Data.workflow.state
+              - inJsonPath: $.workflow.comment
+                outJsonPath: $.Data.workflow.comment
               - inJsonPath: $.workflow.action
                 outJsonPath: $.Data.workflow.action
               - inJsonPath: $.workflow.assignees
@@ -63,7 +63,7 @@ ServiceMaps:
           jsonPath: $.Application
           timeStampField: $.auditDetails.createdTime
           customJsonMapping:
-            indexMapping: {"Data": {"id": "","tenantId": "","module": "","businessService": "","status": "","channel": "","applicationNumber": "","reference": {},"workflowStatus": "","serviceCode": "","serviceDetails": {},"applicants": [],"additionalDetails": {},"address": {},"workflow": {"state": {}, "action": "", "assignees": []},"auditDetails": {},"processInstance": {},"@timestamp": "timestamp"}}
+            indexMapping: {"Data": {"id": "","tenantId": "","module": "","businessService": "","status": "","channel": "","applicationNumber": "","reference": {},"workflowStatus": "","serviceCode": "","serviceDetails": {},"applicants": [],"additionalDetails": {},"address": {},"workflow": {"comment": "", "action": "", "assignees": []},"auditDetails": {},"processInstance": {},"@timestamp": "timestamp"}}
             fieldMapping:
               - inJsonPath: $.id
                 outJsonPath: $.Data.id
@@ -93,8 +93,8 @@ ServiceMaps:
                 outJsonPath: $.Data.additionalDetails
               - inJsonPath: $.address
                 outJsonPath: $.Data.address
-              - inJsonPath: $.workflow.state
-                outJsonPath: $.Data.workflow.state
+              - inJsonPath: $.workflow.comment
+                outJsonPath: $.Data.workflow.comment
               - inJsonPath: $.workflow.action
                 outJsonPath: $.Data.workflow.action
               - inJsonPath: $.workflow.assignees
