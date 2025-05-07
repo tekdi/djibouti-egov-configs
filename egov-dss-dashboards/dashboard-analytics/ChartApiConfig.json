@@ -28217,10 +28217,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "{\"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
+        "dateRefField": "",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Distribution Total\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Quantity\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total distribution\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Total distribution count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -28241,8 +28241,7 @@
       "Total Count Population Administered Cumulative",
       "Population Target",
       "Overall Population Target",
-      "Distribution Total",
-      "Quantity",
+      "Total distribution count",
       "Distribution Target",
       "Overall Distribution Target",
       "End Date",
@@ -28274,7 +28273,7 @@
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Quantity",
+          "Total distribution count",
           "Overall Distribution Target"
         ],
         "newField": "Intervention Coverage",
@@ -31690,6 +31689,13 @@
       {
         "module": "COMMON",
         "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Distribution Target\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Overall Distribution Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\"]}}]}},\"aggs\":{\"Individual Coverage Ratio\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Total Population covered\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
@@ -31758,6 +31764,7 @@
       "Total Population covered",
       "Overall Population target",
       "Total distribution count",
+      "Overall Distribution Target",
       "Referral count",
       "Refused non delivery count",
       "Adverse events count",
@@ -31775,12 +31782,21 @@
       },
       {
         "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Household target"
+        ],
+        "newField": "Households Target",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
           "Households visited count",
           "Overall Household target"
         ],
-        "newField": "Target Achievement Household Visited",
+        "newField": "Household Coverage",
         "_comments": ""
       },
       {
@@ -31789,7 +31805,16 @@
         "fields": [
           "Total Population covered"
         ],
-        "newField": "Children Administered",
+        "newField": "Population Administered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Population target"
+        ],
+        "newField": "Population Target",
         "_comments": ""
       },
       {
@@ -31799,7 +31824,7 @@
           "Total Population covered",
           "Overall Population target"
         ],
-        "newField": "Target Achievement Children Administered",
+        "newField": "Population Coverage",
         "_comments": ""
       },
       {
@@ -31808,7 +31833,26 @@
         "fields": [
           "Total distribution count"
         ],
-        "newField": "Drug administered",
+        "newField": "Intervention administered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Distribution Target"
+        ],
+        "newField": "Intervention Coverage",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Total distribution count",
+          "Overall Distribution Target"
+        ],
+        "newField": "Intervention Coverage",
         "_comments": ""
       },
       {
@@ -31872,6 +31916,13 @@
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Distribution Target\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Overall Distribution Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -31944,6 +31995,7 @@
       "Total Population covered",
       "Overall Population target",
       "Total distribution count",
+      "Overall Distribution Target",
       "Referral count",
       "Refused non delivery count",
       "Adverse events count",
@@ -31961,12 +32013,21 @@
       },
       {
         "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Household target"
+        ],
+        "newField": "Households Target",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
           "Households visited count",
           "Overall Household target"
         ],
-        "newField": "Target Achievement Household Visited",
+        "newField": "Household Coverage",
         "_comments": ""
       },
       {
@@ -31975,7 +32036,16 @@
         "fields": [
           "Total Population covered"
         ],
-        "newField": "Children Administered",
+        "newField": "Population Administered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Population target"
+        ],
+        "newField": "Population Target",
         "_comments": ""
       },
       {
@@ -31985,7 +32055,7 @@
           "Total Population covered",
           "Overall Population target"
         ],
-        "newField": "Target Achievement Children Administered",
+        "newField": "Population Coverage",
         "_comments": ""
       },
       {
@@ -31994,7 +32064,26 @@
         "fields": [
           "Total distribution count"
         ],
-        "newField": "Drug administered",
+        "newField": "Intervention administered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Distribution Target"
+        ],
+        "newField": "Intervention Coverage",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Total distribution count",
+          "Overall Distribution Target"
+        ],
+        "newField": "Intervention Coverage",
         "_comments": ""
       },
       {
@@ -32057,6 +32146,13 @@
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Distribution Target\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Overall Distribution Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -32129,6 +32225,7 @@
       "Total Population covered",
       "Overall Population target",
       "Total distribution count",
+      "Overall Distribution Target",
       "Referral count",
       "Refused non delivery count",
       "Adverse events count",
@@ -32146,12 +32243,21 @@
       },
       {
         "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Household target"
+        ],
+        "newField": "Households Target",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
           "Households visited count",
           "Overall Household target"
         ],
-        "newField": "Target Achievement Household Visited",
+        "newField": "Household Coverage",
         "_comments": ""
       },
       {
@@ -32160,7 +32266,16 @@
         "fields": [
           "Total Population covered"
         ],
-        "newField": "Children Administered",
+        "newField": "Population Administered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Population target"
+        ],
+        "newField": "Population Target",
         "_comments": ""
       },
       {
@@ -32170,7 +32285,7 @@
           "Total Population covered",
           "Overall Population target"
         ],
-        "newField": "Target Achievement Children Administered",
+        "newField": "Population Coverage",
         "_comments": ""
       },
       {
@@ -32179,7 +32294,26 @@
         "fields": [
           "Total distribution count"
         ],
-        "newField": "Drug administered",
+        "newField": "Intervention administered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Distribution Target"
+        ],
+        "newField": "Intervention Coverage",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Total distribution count",
+          "Overall Distribution Target"
+        ],
+        "newField": "Intervention Coverage",
         "_comments": ""
       },
       {
@@ -32242,6 +32376,13 @@
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Distribution Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Overall Distribution Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -32314,6 +32455,7 @@
       "Total Population covered",
       "Overall Population target",
       "Total distribution count",
+      "Overall Distribution Target",
       "Referral count",
       "Refused non delivery count",
       "Adverse events count",
@@ -32331,12 +32473,21 @@
       },
       {
         "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Household target"
+        ],
+        "newField": "Households Target",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
           "Households visited count",
           "Overall Household target"
         ],
-        "newField": "Target Achievement Household Visited",
+        "newField": "Household Coverage",
         "_comments": ""
       },
       {
@@ -32345,7 +32496,16 @@
         "fields": [
           "Total Population covered"
         ],
-        "newField": "Children Administered",
+        "newField": "Population Administered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Population target"
+        ],
+        "newField": "Population Target",
         "_comments": ""
       },
       {
@@ -32355,7 +32515,7 @@
           "Total Population covered",
           "Overall Population target"
         ],
-        "newField": "Target Achievement Children Administered",
+        "newField": "Population Coverage",
         "_comments": ""
       },
       {
@@ -32364,7 +32524,26 @@
         "fields": [
           "Total distribution count"
         ],
-        "newField": "Drug administered",
+        "newField": "Intervention administered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Distribution Target"
+        ],
+        "newField": "Intervention Coverage",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Total distribution count",
+          "Overall Distribution Target"
+        ],
+        "newField": "Intervention Coverage",
         "_comments": ""
       },
       {
@@ -32467,7 +32646,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Overall Household Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Households Targeted\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange Household\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM) * 365\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -32497,7 +32676,7 @@
     ],
     "excludedColumns": [
       "Households visited count",
-      "Overall Household target",
+      "Target for daterange Household",
       "Total Population covered",
       "Overall Population target",
       "Total distribution count",
@@ -32517,11 +32696,20 @@
         "_comments": ""
       },
       {
+        "postAggregationTheory": "repsonseToDifferenceOfDates",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Target for daterange Household"
+        ],
+        "newField": "Household Target",
+        "_comments": ""
+      },
+      {
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
           "Households visited count",
-          "Overall Household target"
+          "Household Target"
         ],
         "newField": "Target Achievement Household Visited",
         "_comments": ""
@@ -36331,6 +36519,81 @@
     "hideInsights": true,
     "hideHeaderDenomination": true,
     "_comment": " "
+  },
+  "summaryTeamPerformanceDistrictByDayICCD": {
+    "chartName": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE_DISTRICT_BY_DAY_ICCD",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"projectTypeId.keyword\",\"province\":\"boundaryHierarchy.province.keyword\",\"district\":\"boundaryHierarchy.district.keyword\"}",
+        "indexName": "attendance-log-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Attend Daily Count\":{\"date_histogram\":{\"field\":\"@timestamp\",\"fixed_interval\":\"1d\",\"min_doc_count\":1,\"format\":\"dd-MM-yyyy\"},\"aggs\":{\"per_user_attendance\":{\"terms\":{\"field\":\"attendanceLog.individualId.keyword\"},\"aggs\":{\"Count\":{\"bucket_script\":{\"buckets_path\":{},\"script\":\"1\"}}}},\"Total Distributors Marked Present\":{\"sum_bucket\":{\"buckets_path\":\"per_user_attendance>Count\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"REGISTRAR\",\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"Distributors\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"fixed_interval\":\"1d\",\"min_doc_count\":1,\"format\":\"dd-MM-yyyy\"},\"aggs\":{\"Total distributors\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"fixed_interval\":\"1d\",\"min_doc_count\":1,\"format\":\"dd-MM-yyyy\"},\"aggs\":{\"Total children administered Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap();         int count = 0;        for(shardList in states) {          if(shardList != null) {             for(key in shardList) {              if(!uniqueValueMap.containsKey(key)) {                count +=1;                uniqueValueMap.put(key, key);              }            }          }        }         return count;\"}}}}}}}}"
+      }
+    ],
+    "filterKeys": [
+      {
+        "key": "district",
+        "column": "District"
+      }
+    ],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "District",
+    "excludedColumns": [
+      "S.N.",
+      "Total Distributors Marked Present",
+      "Avg Distributors Marked Present",
+      "Total distributors",
+      "Total children administered Count"
+    ],
+    "excludedBucketKeys": [
+      "per_day"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Total Distributors Marked Present",
+          "Total distributors"
+        ],
+        "newField": "ATTENDANCE_PERCENT",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Total children administered Count"
+        ],
+        "newField": "Total Children Administered",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "sort": "sortKeyAsc",
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "_comment": " ",
+    "kind": "drillDown"
   },
 
   "supervisorUserSyncICCD": {
