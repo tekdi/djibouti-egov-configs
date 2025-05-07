@@ -13634,6 +13634,15 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "summaryTeamPerformanceDistrictByDayICCD",
+                  "name": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE_DISTRICT_BY_DAY_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
                 }
               ]
             }
@@ -15086,6 +15095,15 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "summaryTeamPerformanceDistrictByDayICCD",
+                  "name": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE_DISTRICT_BY_DAY_ICCD",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
                 }
               ]
             }
