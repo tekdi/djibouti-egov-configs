@@ -11,7 +11,7 @@ ServiceMaps:
           jsonPath: $.Application
           timeStampField: $.auditDetails.createdTime
           customJsonMapping:
-            indexMapping: {"Data": {"id": "","tenantId": "","module": "","businessService": "","status": "","channel": "","applicationNumber": "","reference": {},"workflowStatus": "","serviceCode": "","serviceDetails": {},"applicants": [],"additionalDetails": {},"address": {},"workflow": {"comment": "", "action": "", "assignees": []},"auditDetails": {},"processInstance": {},"documents":[],@timestamp": "timestamp"}}
+            indexMapping: {"Data": {"id": "","tenantId": "","module": "","businessService": "","status": "","channel": "","applicationNumber": "","reference": {},"workflowStatus": "","serviceCode": "","serviceDetails": {},"applicants": [],"additionalDetails": {},"address": {},"workflow": {"comment": "", "action": "", "assignees": []},"auditDetails": {},"processInstance": {},"documents":[],"@timestamp": "timestamp"}}
             fieldMapping:
               - inJsonPath: $.id
                 outJsonPath: $.Data.id
