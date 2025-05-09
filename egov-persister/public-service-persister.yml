@@ -58,7 +58,7 @@ serviceMaps:
             INSERT INTO application_document (
               id, application_number, document_type, file_store_id, document_uid, additional_details,  createdby, last_modifiedby, created_at, updated_at
             )
-            VALUES (?::uuid, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+            VALUES (?::uuid, ?, ?, ?, ?, ?, ?, ?, to_timestamp(? / 1000), to_timestamp(? / 1000));
           basePath: $.Application.documents.*
           jsonMaps:
             - jsonPath: $.Application.documents.*.id
