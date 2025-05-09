@@ -42,20 +42,37 @@ serviceMaps:
 
         - query: >
             INSERT INTO applicant (
-              id, type, application_id, user_id, name, mobile_number, email_id, prefix, active
+              id, type, application_id, user_id, prefix, active
             )
-            VALUES (?::uuid, ?, ?::uuid, ?, ?, ?, ?, ?, ?);
+            VALUES (?::uuid, ?, ?::uuid, ?, ?, ?);
           basePath: $.Application.applicants.*
           jsonMaps:
             - jsonPath: $.Application.applicants.*.id
             - jsonPath: $.Application.applicants.*.type
             - jsonPath: $.Application.id
             - jsonPath: $.Application.applicants.*.userId
-            - jsonPath: $.Application.applicants.*.name
-            - jsonPath: $.Application.applicants.*.mobileNumber
-            - jsonPath: $.Application.applicants.*.emailId
             - jsonPath: $.Application.applicants.*.prefix
             - jsonPath: $.Application.applicants.*.active
+        
+        - query: >
+            INSERT INTO application_document (
+              id, application_number, document_type, file_store_id, document_uid, additional_details,  createdby, last_modifiedby, created_at, updated_at
+            )
+            VALUES (?::uuid, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+          basePath: $.Application.documents.*
+          jsonMaps:
+            - jsonPath: $.Application.documents.*.id
+            - jsonPath: $.Application.applicationNumber.*.type
+            - jsonPath: $.Application.documents.*.documentType
+            - jsonPath: $.Application.documents.*.fileStoreId
+            - jsonPath: $.Application.documents.*.documentUid
+            - jsonPath: $.Application.documents.*.additional_details  
+              type: JSON
+              dbType: JSONB
+            - jsonPath: $.Application.documents.*.auditDetails.createdBy
+            - jsonPath: $.Application.documents.*.auditDetails.lastModifiedBy
+            - jsonPath: $.Application.documents.*.auditDetails.createdTime
+            - jsonPath: $.Application.documents.*.auditDetails.lastModifiedTime
 
         - query: >
             INSERT INTO reference (
@@ -108,18 +125,42 @@ serviceMaps:
 
         - query: >
             UPDATE applicant
-            SET type = ?, user_id = ?, name = ?, mobile_number = ?, email_id = ?, prefix = ?, active = ?
+            SET type = ?, user_id = ?, prefix = ?, active = ?
             WHERE id = ?::uuid;
           basePath: $.Application.applicants.*
           jsonMaps:
             - jsonPath: $.Application.applicants.*.type
             - jsonPath: $.Application.applicants.*.userId
-            - jsonPath: $.Application.applicants.*.name
-            - jsonPath: $.Application.applicants.*.mobileNumber
-            - jsonPath: $.Application.applicants.*.emailId
             - jsonPath: $.Application.applicants.*.prefix
             - jsonPath: $.Application.applicants.*.active
             - jsonPath: $.Application.applicants.*.id
+
+        - query: >
+            DELETE FROM application_document WHERE application_number = ?;
+          basePath: $.Application
+          jsonMaps:
+            - jsonPath: $.Application.applicationNumber
+      
+        - query: >
+            INSERT INTO application_document (
+              id, application_number, document_type, file_store_id, document_uid, additional_details, createdby, last_modifiedby, created_at, updated_at
+            )
+            VALUES (?::uuid, ?, ?, ?, ?, ?, ?, ?, to_timestamp(? / 1000), to_timestamp(? / 1000));
+          basePath: $.Application.documents.*
+          jsonMaps:
+            - jsonPath: $.Application.documents.*.id
+            - jsonPath: $.Application.applicationNumber
+            - jsonPath: $.Application.documents.*.documentType
+            - jsonPath: $.Application.documents.*.fileStoreId
+            - jsonPath: $.Application.documents.*.documentUid
+            - jsonPath: $.Application.documents.*.additional_details
+              type: JSON
+              dbType: JSONB
+            - jsonPath: $.Application.documents.*.auditDetails.createdBy
+            - jsonPath: $.Application.documents.*.auditDetails.lastModifiedBy
+            - jsonPath: $.Application.documents.*.auditDetails.createdTime
+            - jsonPath: $.Application.documents.*.auditDetails.lastModifiedTime
+
 
         - query: >
             UPDATE reference
