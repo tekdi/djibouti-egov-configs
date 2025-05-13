@@ -62,7 +62,7 @@ serviceMaps:
           basePath: $.Application.documents.*
           jsonMaps:
             - jsonPath: $.Application.documents.*.id
-            - jsonPath: $.Application.applicationNumber.*.type
+            - jsonPath: $.Application.applicationNumber
             - jsonPath: $.Application.documents.*.documentType
             - jsonPath: $.Application.documents.*.fileStoreId
             - jsonPath: $.Application.documents.*.documentUid
