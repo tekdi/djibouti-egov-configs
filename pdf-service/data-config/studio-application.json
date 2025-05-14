@@ -10,7 +10,12 @@
           "mappings": [
             {
               "direct": [
-                
+                 {
+                "variable": "Property_ID",
+                "value": {
+                  "path": "$.applicationNo"
+                }
+            }
               ]
             },
             {
