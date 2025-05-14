@@ -1,0 +1,25 @@
+{
+    "key": "studio-application",
+    "DataConfigs": {
+      "serviceName": "public-services",
+      "version": "1.0.0",
+      "baseKeyPath": "$.Application.*",
+      "entityIdPath":"$.id",
+      "mappings": [
+        {
+          "mappings": [
+            {
+              "direct": [
+                
+              ]
+            },
+            {
+              "label": [
+               
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
