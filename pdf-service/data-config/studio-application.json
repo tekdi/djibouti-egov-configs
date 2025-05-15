@@ -348,22 +348,7 @@
           },
           {
             "externalAPI": [
-              {
-                "path": "http://egov-workflow-v2.egov:8080/egov-workflow-v2/egov-wf/process/_search",
-                "queryParam": "businessIds=$.Application[0].applicationNumber,history=true,tenantId=$.tenantId",
-                "apiRequest": null,
-                "responseMapping": [
-                  {
-                    "variable": "approved_by_value",
-                    "value": "$.ProcessInstances[0].assigner.name"
-                  },
-                  {
-                    "variable": "Approval_Date",
-                    "value": "$.ProcessInstances[0].auditDetails.lastModifiedTime",
-                    "type": "date"
-                  }
-                ]
-              }
+              
             ]
           }
         ]
