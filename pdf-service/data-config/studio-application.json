@@ -331,6 +331,18 @@
                 "value": {
                   "path": "$.MdmsRes.tenant.tenants[0].city.regionName"
                 }
+              },
+              {
+                "variable": "approved_by_value",
+                "value": {
+                  "path": "$.Application[0].name"
+                }
+              },
+              {
+                "variable": "Approval_Date",
+                "value": {
+                  "path": "$.Application[0].auditDetails.createdTime"
+                }
               }
             ]
           },
