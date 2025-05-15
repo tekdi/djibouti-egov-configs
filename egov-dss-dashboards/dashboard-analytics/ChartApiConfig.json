@@ -27623,7 +27623,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total Population covered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"total_count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total Population covered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"total_count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -27857,7 +27857,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"script\":{\"source\":\"'Referral'\"}}}}}}}"
       },
@@ -27906,7 +27906,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"selectedType\":\"Data.referral.additionalFields.schema.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"selectedType\":\"Data.referral.additionalFields.schema.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -27975,7 +27975,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"script\":{\"source\":\"'Referral'\"}}}}}}}"
       },
@@ -28024,7 +28024,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"selectedType\":\"Data.referral.additionalFields.schema.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"selectedType\":\"Data.referral.additionalFields.schema.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -28093,7 +28093,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"script\":{\"source\":\"'Referral'\"}}}}}}}"
       },
@@ -28142,7 +28142,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"selectedType\":\"Data.referral.additionalFields.schema.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"selectedType\":\"Data.referral.additionalFields.schema.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -29048,7 +29048,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "user-sync-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"WAREHOUSE_MANAGER\"]}},{\"exists\":{\"field\":\"Data.syncedUserId.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"WAREHOUSE_MANAGER\"]}},{\"exists\":{\"field\":\"Data.syncedUserId.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"cardinality\":{\"field\":\"Data.syncedUserId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -29575,7 +29575,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"match_phrase\":{\"Data.facilityType.keyword\":\"Monitor Local\"}}]}}}},\"aggs\":{\"No. of Warehouses\":{\"terms\":{\"size\":50000,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"CARDINALITY\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.facilityId.keyword\"},\"init_script\":\"state.list=[]\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"match_phrase\":{\"Data.facilityType.keyword\":\"Monitor Local\"}}]}}}},\"aggs\":{\"No. of Warehouses\":{\"terms\":{\"size\":50000,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"CARDINALITY\":{\"cardinality\":{\"field\":\"Data.facilityId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -29942,7 +29942,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "user-sync-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}},{\"exists\":{\"field\":\"Data.syncedUserId.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Unique FLWs Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}},{\"exists\":{\"field\":\"Data.syncedUserId.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Unique FLWs Synced\":{\"cardinality\":{\"field\":\"Data.syncedUserId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -30009,7 +30009,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "user-sync-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"exists\":{\"field\":\"Data.syncedUserId.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Unique FLWs Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}},{\"exists\":{\"field\":\"Data.syncedUserId.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Unique FLWs Synced\":{\"cardinality\":{\"field\":\"Data.syncedUserId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -30401,7 +30401,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -30489,7 +30489,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -30576,7 +30576,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -30663,7 +30663,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -30749,7 +30749,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -30820,7 +30820,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -30890,7 +30890,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -30960,7 +30960,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -31410,7 +31410,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"selectedType\":\"Data.referral.additionalFields.schema.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"selectedType\":\"Data.referral.additionalFields.schema.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -31480,7 +31480,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"selectedType\":\"Data.referral.additionalFields.schema.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"selectedType\":\"Data.referral.additionalFields.schema.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -31731,7 +31731,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Referral count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -31962,7 +31962,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Referral count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -32192,7 +32192,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Referral count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -32422,7 +32422,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Referral count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -32630,7 +32630,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}},\"aggs\":{\"Total Referrals\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Referral count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
       },
@@ -32788,14 +32788,14 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Referred Children Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "hf-referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
       }
@@ -32827,14 +32827,14 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Referred Children Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "hf-referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
       }
@@ -32865,14 +32865,14 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Referred Children Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "hf-referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
       }
@@ -32903,14 +32903,14 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Referred Children Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "hf-referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
       }
@@ -32940,14 +32940,14 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Referred Children Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "hf-referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
       }
@@ -33015,14 +33015,14 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Referred Children Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "hf-referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
       }
@@ -33089,14 +33089,14 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Referred Children Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "hf-referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
       }
@@ -33163,14 +33163,14 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Referred Children Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "hf-referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
       }
@@ -33237,7 +33237,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"village\":\"Data.boundaryHierarchy.village.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"village\":\"Data.boundaryHierarchy.village.keyword\"}",
         "indexName": "hf-referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.hfReferral.projectFacilityId.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
       }
@@ -33542,7 +33542,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Unique Children Visited\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return -count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Unique Children Visited\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -33594,7 +33594,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Unique Children Visited\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return -count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Unique Children Visited\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -33646,7 +33646,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Unique Children Visited\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return -count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Unique Children Visited\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -33698,7 +33698,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Unique Children Visited\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return -count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Unique Children Visited\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -33872,7 +33872,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Negative Unique Children Visited\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return -count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Positive Unique Children Visited\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}},\"Negative Unique Children Visited\":{\"bucket_script\":{\"buckets_path\":{\"pos\":\"Positive Unique Children Visited\"},\"script\":\"return -1 * params.pos\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -33982,7 +33982,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Negative Unique Children Visited\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return -count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Positive Unique Children Visited\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}},\"Negative Unique Children Visited\":{\"bucket_script\":{\"buckets_path\":{\"pos\":\"Positive Unique Children Visited\"},\"script\":\"return -1 * params.pos\"}}}}}}}}"
       },
 
       {
@@ -34092,7 +34092,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Negative Unique Children Visited\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return -count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Positive Unique Children Visited\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}},\"Negative Unique Children Visited\":{\"bucket_script\":{\"buckets_path\":{\"pos\":\"Positive Unique Children Visited\"},\"script\":\"return -1 * params.pos\"}}}}}}}}"
       },
 
       {
@@ -34203,7 +34203,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Negative Unique Children Visited\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return -count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Positive Unique Children Visited\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}},\"Negative Unique Children Visited\":{\"bucket_script\":{\"buckets_path\":{\"pos\":\"Positive Unique Children Visited\"},\"script\":\"return -1 * params.pos\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -34305,7 +34305,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"village\":\"Data.boundaryHierarchy.village.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Negative Unique Children Visited\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return -count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Positive Unique Children Visited\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}},\"Negative Unique Children Visited\":{\"bucket_script\":{\"buckets_path\":{\"pos\":\"Positive Unique Children Visited\"},\"script\":\"return -1 * params.pos\"}}}}}}}}"
       },
 
       {
@@ -36618,7 +36618,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "user-sync-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"NATIONAL_SUPERVISOR\",\"PROVINCIAL_SUPERVISOR\",\"DISTRICT_SUPERVISOR\",\"TEAM_SUPERVISOR\"]}},{\"exists\":{\"field\":\"Data.syncedUserId.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"NATIONAL_SUPERVISOR\",\"PROVINCIAL_SUPERVISOR\",\"DISTRICT_SUPERVISOR\",\"TEAM_SUPERVISOR\"]}},{\"exists\":{\"field\":\"Data.syncedUserId.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"cardinality\":{\"field\":\"Data.syncedUserId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -36687,7 +36687,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "user-sync-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"TEAM_SUPERVISOR\"]}},{\"exists\":{\"field\":\"Data.syncedUserId.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"TEAM_SUPERVISOR\"]}},{\"exists\":{\"field\":\"Data.syncedUserId.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"cardinality\":{\"field\":\"Data.syncedUserId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -38081,7 +38081,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "hf-referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
       },
@@ -38120,7 +38120,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}",
         "indexName": "hf-referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
       },
@@ -38159,7 +38159,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "hf-referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
       },
@@ -38198,7 +38198,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"village\":\"Data.boundaryHierarchy.village.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"village\":\"Data.boundaryHierarchy.village.keyword\"}",
         "indexName": "hf-referral-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
       },
