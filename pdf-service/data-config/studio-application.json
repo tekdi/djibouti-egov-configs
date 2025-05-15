@@ -1,30 +1,37 @@
 {
-    "key": "studio-application",
-    "DataConfigs": {
-      "serviceName": "public-services",
-      "version": "1.0.0",
-      "baseKeyPath": "$.Application.*",
-      "entityIdPath":"$.id",
-      "mappings": [
-        {
-          "mappings": [
-            {
-              "direct": [
-                 {
-                "variable": "Property_ID",
+  "key": "studio-application",
+  "DataConfigs": {
+    "serviceName": "public-services",
+    "version": "1.0.0",
+    "baseKeyPath": "$.Application.*",
+    "entityIdPath": "$.id",
+    "mappings": [
+      {
+        "mappings": [
+          {
+            "direct": [
+              {
+                "variable": "applicationNumber",
                 "value": {
-                  "path": "$.applicationNo"
+                  "path": "$.applicationNumber"
                 }
-            }
-              ]
-            },
-            {
-              "label": [
-               
-              ]
-            }
-          ]
-        }
-      ]
-    }
+              },
+              {
+                "variable": "module",
+                "value": {
+                  "path": "$.module"
+                }
+              },
+              {
+                "variable": "businessService",
+                "value": {
+                  "path": "$.businessService"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
+}

@@ -56,6 +56,33 @@
                       {
                         "text": "REGULATIONS AND PERMITS DEPARTMENT",
                         "style": "boldCenter"
+                      },
+                      {
+                        "text": "Application No",
+                        "style": "receipt-content"
+                      },
+                      {
+                        "text": "{{applicationNumber}}",
+                        "style": "receipt-content",
+                        "font": "Roboto"
+                      },
+                      {
+                        "text": "Application Module",
+                        "style": "receipt-content"
+                      },
+                      {
+                        "text": "{{module}}",
+                        "style": "receipt-content",
+                        "font": "Roboto"
+                      },
+                      {
+                        "text": "Application businessService",
+                        "style": "receipt-content"
+                      },
+                      {
+                        "text": "{{businessService}}",
+                        "style": "receipt-content",
+                        "font": "Roboto"
                       }
                     ]
                   }
