@@ -91,7 +91,7 @@
               {
                 "stack": [
                   {
-                    "text": "{{Mutation_Approval_Certificate}}",
+                    "text": "{{DIGIT_STUDIO_HEADER}}",
                     "style": "receipt-sub-logo-header"
                   },
                   {
@@ -104,34 +104,11 @@
                       "body": [
                         [
                           {
-                            "text": "{{Property_ID_Label}}",
+                            "text": "{{Application_Number_Label}}",
                             "style": "receipt-content"
                           },
                           {
-                            "text": "{{applicationNumber}}",
-                            "style": "receipt-content",
-                            "font": "Roboto"
-                          }
-                        ]
-                      ]
-                    },
-                    "layout": "noBorders"
-                  },
-                  {
-                    "style": "noc-head",
-                    "table": {
-                      "widths": [
-                        "35%",
-                        "65%"
-                      ],
-                      "body": [
-                        [
-                          {
-                            "text": "{{Mutation_Number_Label}}",
-                            "style": "receipt-content"
-                          },
-                          {
-                            "text": "{{Mutation_Number}}",
+                            "text": "{{Application_Number}}",
                             "style": "receipt-content",
                             "font": "Roboto"
                           }
@@ -173,7 +150,145 @@
                       "body": [
                         [
                           {
-                            "text": "{{Receipt_Number_Label}}",
+                            "text": "{{TRADELICENSE_SERVICE_CODE}}",
+                            "style": "receipt-content"
+                          },
+                          {
+                            "text": "{{serviceCode}}",
+                            "style": "receipt-content",
+                            "font": "Roboto"
+                          }
+                        ]
+                      ]
+                    },
+                    "layout": "noBorders"
+                  },
+                  {
+                    "style": "noc-head",
+                    "table": {
+                      "widths": [
+                        "35%",
+                        "65%"
+                      ],
+                      "body": [
+                        [
+                          {
+                            "text": "{{OP_CONSUMER_NAME}}",
+                            "style": "receipt-content"
+                          },
+                          {
+                            "text": "{{Name}}",
+                            "style": "receipt-content",
+                            "font": "Roboto"
+                          }
+                        ]
+                      ]
+                    },
+                    "layout": "noBorders"
+                  },
+                  {
+                    "style": "noc-head",
+                    "table": {
+                      "widths": [
+                        "35%",
+                        "65%"
+                      ],
+                      "body": [
+                        [
+                          {
+                            "text": "{{TRADELICENSE_NEWTL_LICENSETYPE}}",
+                            "style": "receipt-content"
+                          },
+                          {
+                            "text": "{{type}}",
+                            "style": "receipt-content",
+                            "font": "Roboto"
+                          }
+                        ]
+                      ]
+                    },
+                    "layout": "noBorders"
+                  },
+                  {
+                    "style": "noc-head",
+                    "table": {
+                      "widths": [
+                        "35%",
+                        "65%"
+                      ],
+                      "body": [
+                        [
+                          {
+                            "text": "{{TRADELICENSE_NEWTL_TRADETYPE}}",
+                            "style": "receipt-content"
+                          },
+                          {
+                            "text": "{{tradetype}}",
+                            "style": "receipt-content",
+                            "font": "Roboto"
+                          }
+                        ]
+                      ]
+                    },
+                    "layout": "noBorders"
+                  },
+                  {
+                    "style": "noc-head",
+                    "table": {
+                      "widths": [
+                        "35%",
+                        "65%"
+                      ],
+                      "body": [
+                        [
+                          {
+                            "text": "{{TRADELICENSE_NEWTL_TRADENAME}}",
+                            "style": "receipt-content"
+                          },
+                          {
+                            "text": "{{tradeName}}",
+                            "style": "receipt-content",
+                            "font": "Roboto"
+                          }
+                        ]
+                      ]
+                    },
+                    "layout": "noBorders"
+                  },
+                  {
+                    "style": "noc-head",
+                    "table": {
+                      "widths": [
+                        "35%",
+                        "65%"
+                      ],
+                      "body": [
+                        [
+                          {
+                            "text": "{{TRADELICENCE_STRUCTURESUBTYPE_TRADESTRUCTURESUBTYPE_BUSINESS_AND_IT}}",
+                            "style": "receipt-content"
+                          },
+                          {
+                            "text": "{{licenseType}}",
+                            "style": "receipt-content",
+                            "font": "Roboto"
+                          }
+                        ]
+                      ]
+                    },
+                    "layout": "noBorders"
+                  },
+                  {
+                    "style": "noc-head",
+                    "table": {
+                      "widths": [
+                        "35%",
+                        "65%"
+                      ],
+                      "body": [
+                        [
+                          {
+                            "text": "{{TRADELICENSE_STATUS}}",
                             "style": "receipt-content"
                           },
                           {
@@ -208,111 +323,6 @@
                       ]
                     },
                     "layout": "noBorders"
-                  }
-                ],
-                "alignment": "left",
-                "margin": [
-                  0,
-                  10,
-                  0,
-                  0
-                ]
-              }
-            ],
-            [
-              {
-                "stack": [
-                  {
-                    "text": "{{Order_Label}}",
-                    "bold": true,
-                    "style": "receipt-order-header"
-                  },
-                  {
-                    "text": "{{Mutation_Declaration_Label}}",
-                    "style": "receipt-order-content"
-                  }
-                ],
-                "alignment": "left",
-                "margin": [
-                  0,
-                  10,
-                  0,
-                  0
-                ]
-              }
-            ],
-            [
-              {
-                "stack": [
-                  {
-                    "style": "noc-head",
-                    "table": {
-                      "widths": [
-                        "35%",
-                        "65%"
-                      ],
-                      "body": [
-                        [
-                          {
-                            "text": "{{Transferrer_Details_Label}}",
-                            "style": "receipt-content"
-                          },
-                          {
-                            "text": "{{Transferrer_Name}} {{Transferrer_Relation}} {{Transferrer_Relative_Name}}",
-                            "style": "receipt-content"
-                          }
-                        ]
-                      ]
-                    },
-                    "layout": "noBorders"
-                  },
-                  {
-                    "style": "noc-head",
-                    "table": {
-                      "widths": [
-                        "35%",
-                        "65%"
-                      ],
-                      "body": [
-                        [
-                          {
-                            "text": "{{Transferree_Details_Label}}",
-                            "style": "receipt-content"
-                          },
-                          {
-                            "text": "{{Transferree_Name}} {{Transferree_Relation}} {{Transferree_Relative_Name}}",
-                            "style": "receipt-content"
-                          }
-                        ]
-                      ]
-                    },
-                    "layout": "noBorders"
-                  }
-                ],
-                "alignment": "left",
-                "margin": [
-                  0,
-                  10,
-                  0,
-                  0
-                ]
-              }
-            ],
-            [
-              {
-                "stack": [
-                  {
-                    "text": "{{Mutation_To_Label}}",
-                    "bold": true,
-                    "style": "receipt-order-header"
-                  },
-                  {
-                    "text": "{{Shri_Smt_Label}} {{Transferree_Name}}",
-                    "style": "receipt-order-content"
-                  },
-                  {
-                    "text": "{{Transferree_Address}}",
-                    "style": "receipt-order-content"
                   }
                 ],
                 "alignment": "left",
