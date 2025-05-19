@@ -51,6 +51,8 @@ ServiceMaps:
                 outJsonPath: $.Data.auditDetails
               - inJsonPath: $.processInstance
                 outJsonPath: $.Data.processInstance
+              - inJsonPath: $.processInstance[0]
+                outJsonPath: $.Data.currentProcessInstance
               - inJsonPath: $.documents
                 outJsonPath: $.Data.documents   
               - inJsonPath: $.@timestamp
@@ -105,6 +107,8 @@ ServiceMaps:
                 outJsonPath: $.Data.auditDetails
               - inJsonPath: $.processInstance
                 outJsonPath: $.Data.processInstance
+              - inJsonPath: $.processInstance[0]
+                outJsonPath: $.Data.currentProcessInstance
               - inJsonPath: $.documents
                 outJsonPath: $.Data.documents   
               - inJsonPath: $.@timestamp
