@@ -1,7 +1,7 @@
 {
     "key": "pco-application",
     "DataConfigs": {
-      "serviceName": "urban-permit",
+      "serviceName": "rainmaker-studio-bpa",
       "version": "1.0.0",
       "baseKeyPath": "$.Application.*",
       "entityIdPath":"$.id",
