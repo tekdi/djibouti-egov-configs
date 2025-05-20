@@ -464,3 +464,38 @@ serviceMaps:
             - jsonPath: $.campaignProcesses.*.lastModifiedBy
             - jsonPath: $.campaignProcesses.*.lastModifiedTime
             - jsonPath: $.campaignProcesses.*.id
+
+    - version: 1.0
+      name: CreateSheetData
+      description: Create sheet data in the eg_cm_campaign_data table
+      fromTopic: save-sheet-data
+      isTransaction: true
+      queryMaps:
+        - query: INSERT INTO health.eg_cm_campaign_data(campaignnumber, "type",uniqueidentifier,data,uniqueidafterprocess, "status") VALUES (?,?,?,?,?,?);
+          basePath: datas.*
+          jsonMaps:
+            - jsonPath: $.datas.*.campaignNumber
+            - jsonPath: $.datas.*.type
+            - jsonPath: $.datas.*.uniqueIdentifier
+            - jsonPath: $.datas.*.data
+              type: JSON
+              dbType: JSONB
+            - jsonPath: $.datas.*.uniqueIdAfterProcess
+            - jsonPath: $.datas.*.status
+
+
+    - version: 1.0
+      name: UpdateSheetData
+      description: Update sheet data in the eg_cm_campaign_data table
+      fromTopic: update-sheet-data
+      isTransaction: true
+      queryMaps:
+        - query: UPDATE health.eg_cm_campaign_data SET data = ?,uniqueidafterprocess = ?, "status" = ? WHERE uniqueidentifier = ?;
+          basePath: datas.*
+          jsonMaps:
+            - jsonPath: $.datas.*.data
+              type: JSON
+              dbType: JSONB
+            - jsonPath: $.datas.*.uniqueIdAfterProcess
+            - jsonPath: $.datas.*.status
+            - jsonPath: $.datas.*.uniqueIdentifier
