@@ -78,10 +78,10 @@
               "stack": [
                 { "text": "{{BPA_BPA_PCO_APPLICANTDETAILS}}", "style": "sectionHeader" },
                 { "text": "{{DECLARATION}}", "margin": [0, 5] },
-                { "text": "{{BPA_BPA_PCO_WAYTOADDRESS}} : {{prefix}}", "margin": [0, 10] },
+                { "text": "{{BPA_BPA_PCO_WAYTOADDRESS}} : {{wayToAdddress}}", "margin": [0, 10] },
                 { "text": "{{BPA_BPA_PCO_LEGALNAME}}: {{fullName}}", "margin": [0, 5] },
                 { "text": "{{BPA_BPA_PCO_ADDRESS}}: {{address}}", "margin": [0, 5] },
-                { "text": "{{BPA_BPA_PCO_NATIONALIDNUMBER}}: {{address}}", "margin": [0, 5] },
+                { "text": "{{BPA_BPA_PCO_NATIONALIDNUMBER}}: {{nationalIdNo}}", "margin": [0, 5] },
                 { "text": "{{BPA_BPA_PCO_TELEPHONE}}: {{phone}}", "margin": [0, 10] }
               ]
             }]]
