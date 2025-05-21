@@ -10,10 +10,11 @@
           "mappings": [
           {
             "direct": [
-              { "variable": "individualType", "value": { "path": "$.applicants.*.type" }},
+              { "variable": "wayToAdddress", "value": { "path": "$.additionalDetails.applicants.wayToAddress" }},
               { "variable": "fullName", "value": { "path": "$.applicants.*.name" }},
-              { "variable": "address", "value": { "path": "$.applicant.address.addressLine1" }},
-              { "variable": "phone", "value": { "path": "$.applicant.phone" }},
+              { "variable": "address", "value": { "path": "$.additionalDetails.applicants.address" }},
+              { "variable": "nationalIdNo", "value": { "path": "$.additionalDetails.applicants.nationalIdNumber" }},
+              { "variable": "phone", "value": { "path": "$.applicants.*.mobileNumber" }},
               { "variable": "companyName", "value": { "path": "$.applicant.company.name" }},
               { "variable": "companyRegNo", "value": { "path": "$.applicant.company.regNo" }},
               { "variable": "repFullName", "value": { "path": "$.applicant.company.representative" }},
