@@ -1,0 +1,30 @@
+{
+  "key": "permit-receipt",
+  "DataConfigs": {
+    "serviceName": "urban-permit",
+    "version": "1.0.0",
+    "baseKeyPath": "$",
+    "entityIdPath":"$.id",
+    "mappings": [
+      {
+        "mappings": [
+          {
+            "direct": [
+              {
+                "variable": "applicationNumber",
+                "value": {
+                  "path": "$.applicationNumber"
+                }
+              }
+            ]
+          },
+          {
+            "label": [
+
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
