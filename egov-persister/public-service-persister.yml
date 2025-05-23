@@ -2,7 +2,7 @@
 serviceMaps:
   serviceName: public Service
   mappings:
-    - version: 1
+    - version: 1.0
       name: public service application create
       description: create public application
       fromTopic: save-public-service-application
@@ -82,7 +82,7 @@ serviceMaps:
             - jsonPath: $.Application.reference.referenceNo
             - jsonPath: $.Application.reference.active
             - jsonPath: $.Application.id
-    - version: 1
+    - version: 1.0
       description: Updates a product variant
       fromTopic: update-public-service-application
       isTransaction: true
@@ -159,7 +159,7 @@ serviceMaps:
             - jsonPath: $.Application.reference.referenceNo
             - jsonPath: $.Application.reference.active
             - jsonPath: $.Application.reference.referenceId
-    - version: 1
+    - version: 1.0
       name: public service create
       description: create public service
       fromTopic: save-public-service
@@ -184,7 +184,7 @@ serviceMaps:
             - jsonPath: $.Service.auditDetails.lastModifiedBy
             - jsonPath: $.Service.auditDetails.createdTime
             - jsonPath: $.Service.auditDetails.lastModifiedTime
-    - version: 1
+    - version: 1.0
       name: public service update
       description: update public service by serviceCode
       fromTopic: update-public-service
