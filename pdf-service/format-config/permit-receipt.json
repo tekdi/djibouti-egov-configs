@@ -221,7 +221,7 @@
           "widths": ["*"],
           "body": [[
             {
-              "text": "Authorization is granted to [Name of the applicant] to carry out the above-mentioned construction project, subject to compliance with the applicable technical, environmental, and administrative requirements.\n\nThis permit is valid for 2 years from the date of signature.\n\nAny violation will be subject to the penalties provided by law.",
+              "text": "Authorization is granted to [Name of the applicant] to carry out the above-mentioned construction project, subject to compliance with the applicable technical, environmental, and administrative requirements. This permit is valid for 2 years from the date of signature. Any violation will be subject to the penalties provided by law.",
               "margin": [5, 5, 5, 5]
             }
           ]]

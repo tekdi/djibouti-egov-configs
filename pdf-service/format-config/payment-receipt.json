@@ -225,7 +225,7 @@
                   {
                     "width": "*",
                     "text": [
-                      { "text": "Land title number:: ", "bold": true },
+                      { "text": "Land title number: ", "bold": true },
                       { "text": ".................." }
                     ]
                   }

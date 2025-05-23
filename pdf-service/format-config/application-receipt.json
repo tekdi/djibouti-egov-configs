@@ -16,7 +16,7 @@
                   {
                     "stack": [
                       {
-                        "text": "MINISTRY OF URBAN AFFAIRS, URBAN PLANNING AND HOUSING",
+                        "text": "{{URBAN_AFFAIRS_MINISTRY}}",
                         "style": "boldCenter"
                       },
                       {
@@ -25,7 +25,7 @@
                         "margin": [0, 5]
                       },
                       {
-                        "text": "DIRECTION DE L'AMENAGEMENT DU TERRITOIRE, URBAN PLANNING AND HOUSING",
+                        "text": "{{DIRECTION_TERRITOIRE}}",
                         "style": "boldCenter"
                       },
                       {
@@ -34,7 +34,7 @@
                         "margin": [0, 5]
                       },
                       {
-                        "text": "SUB-DEPARTMENT OF DEVELOPMENT AND URBAN PLANNING",
+                        "text": "{{DEVELOPEMENT_URBAN_PLANING_SUB_DEPARTMENT}}",
                         "style": "boldCenter"
                       },
                       {
@@ -43,7 +43,7 @@
                         "margin": [0, 5]
                       },
                       {
-                        "text": "REGULATIONS AND PERMITS DEPARTMENT",
+                        "text": "{{REGULATION_PERMITS_DEPARTMENT}}",
                         "style": "boldCenter"
                       }
                     ]
@@ -81,11 +81,11 @@
                       {
                         "stack": [
                           {
-                            "text": "REPUBLIC OF DJIBOUTI",
+                            "text": "{{REPUBLIC_OF_DJIBOUTI}}",
                             "style": "boldCenter"
                           },
                           {
-                            "text": "Unity-Equality-Peace",
+                            "text": "{{SLOGAN}}",
                             "alignment": "center",
                             "margin": [0, 5, 0, 0]
                           }
@@ -105,11 +105,11 @@
                       {
                         "stack": [
                           {
-                            "text": "Submission date",
+                            "text": "{{SUBMISSION_DATE}}",
                             "style": "boldCenter"
                           },
                           {
-                            "text": "For preliminary inspection",
+                            "text": "{{FOR_PRELIMINARY_INSPECTION}}",
                             "style": "boldCenter"
                           }
                         ]
@@ -131,12 +131,12 @@
               {
                 "stack": [
                   {
-                    "text": "FILE DEPOSIT RECEIPT",
+                    "text": "{{FILE_DEPOSIT_RECEIPT}}",
                     "style": "mainHeader",
                     "margin": [0, 0, 0, -5]
                   },
                   {
-                    "text": "PRELIMINARY INSPECTIONS FOR ORDINARY BUILDING PERMITS",
+                    "text": "{{PRELIMINARY_INSPECTIONS_FOR_PERMITS}}",
                     "style": "mainHeader",
                     "margin": [0, 1, 0, 0]
                   }
@@ -151,13 +151,13 @@
         "margin": [0, 20, 0, 10]
       },
       {
-        "text": "Name of petitioner: {{petionerName}}",
+        "text": "{{NAME_OF_PETITIONER}} {{petionerName}}",
         "bold": true,
         "margin": [0, 10, 0, 2]
       },
       {
         "columns": [
-          { "text": "Filed by:  {{filedBy}}", "bold": true, "width": "50%" },
+          { "text": "{{FILED_BY}}  {{filedBy}}", "bold": true, "width": "50%" },
           { "text": "Phone: {{phone}}", "bold": true, "alignment": "right", "width": "50%" }
         ],
         "margin": [0, -5, 80, -5]
@@ -168,24 +168,24 @@
           "widths": ["*"],
           "body": [[{
             "stack": [
-              { "text": "Ladies and Gentlemen petitioners,", "margin": [0, 0, 0, 10] },
+              { "text": "{{APPLICATION_NOTE1}}", "margin": [0, 0, 0, 10] },
               {
-                "text": "As part of the Ordinary Building Permit process, and in order to serve you better, you submit a file containing all the plans for your construction project for preliminary inspection. Your project will be processed within 48 hours. After reviewing your application, you will be notified of",
+                "text": "{{APPLICATION_NOTE2}}",
                 "margin": [0, 0, 0, 10]
               },
               {
                 "ol": [
-                  "Or that your application meets the requirements of current regulations and requires no modification. It will then be validated for submission of the 4, 6 or 9 copies to the Secretariat of the Direction de l'Aménagement du Territoire, de l'Urbanisme et l'Habitat.",
-                  "Or your application is incomplete or needs to be amended to comply with current regulations. You will then be asked to modify it accordingly and submit it again."
+                  "{{APPLICATION_NOTE3}}",
+                  "{{APPLICATION_NOTE4}}"
                 ],
                 "margin": [0, 0, 0, 10]
               },
               {
-                "text": "You hereby certify that you have submitted this application and that you have read and understood the relevant terms and conditions.",
+                "text": "{{APPLICATION_NOTE5}}",
                 "margin": [0, 0, 0, 20]
               },
               { "text": "Djibouti,", "margin": [0, 10, 0, 2] },
-              { "text": "Signature preceded by the words Read and Approved.", "margin": [0, 0, 0, 10] }
+              { "text": "{{SIGNATURE_APPROVED}}", "margin": [0, 0, 0, 10] }
             ]
           }]]
         },
@@ -197,12 +197,12 @@
       },
       {
         "ul": [
-          "This preliminary step in no way constitutes the submission of the Building Permit application. It does not replace the filing of the 4 copies to obtain the Ordinary Building Permit.",
-          "No work may be started until the building permit has been obtained from.",
-          "The presentation of this receipt is strictly obligatory for the withdrawal of the file from the Regulations and Authorizations Department.",
-          "No work may be undertaken until a duly signed building permit has been obtained.",
-          "The applicant is only authorized to submit the required number of copies of the Building Permit application once he has obtained the agreement to submit, signed and stamped with the words Bon pour Dépôt (Good for submission).",
-          "In short, the mere fact of submitting the file for preliminary inspection in no way constitutes the submission of the Building Permit file, let alone any authorization or certification of the compliance of any application for said Permit."
+          "{{APPLICATION_NOTE6}}",
+          "{{APPLICATION_NOTE7}}",
+          "{{APPLICATION_NOTE8}}",
+          "{{APPLICATION_NOTE9}}",
+          "{{APPLICATION_NOTE10}}",
+          "{{APPLICATION_NOTE11}}"
         ],
         "style": "note"
       }
