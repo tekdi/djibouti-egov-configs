@@ -518,6 +518,14 @@
               {
                 "stack": [
                   {
+                    "text": "{{APPLICANTS_COMMITMENT}}",
+                    "style": "sectionHeader",
+                    "margin": [
+                      0,
+                      5
+                    ]
+                  },
+                  {
                     "text": "{{BPA_BPA_PCO_ELIGIBILITYDECLARATION}}",
                     "margin": [
                       0,
