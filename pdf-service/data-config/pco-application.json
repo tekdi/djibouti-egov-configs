@@ -1,41 +1,197 @@
 {
-    "key": "pco-application",
-    "DataConfigs": {
-      "serviceName": "rainmaker-studio-bpa",
-      "version": "1.0.0",
-      "baseKeyPath": "$.Application.*",
-      "entityIdPath":"$.id",
-      "mappings": [
-        {
-          "mappings": [
+  "key": "pco-application",
+  "DataConfigs": {
+    "serviceName": "rainmaker-studio-bpa",
+    "version": "1.0.0",
+    "baseKeyPath": "$.PublicService.*.Application.*",
+    "entityIdPath": "$.id",
+    "mappings": [
+      {
+        "mappings": [
           {
             "direct": [
-              { "variable": "wayToAdddress", "value": { "path": "$.additionalDetails.applicants.wayToAddress" }},
-              { "variable": "fullName", "value": { "path": "$.applicants.*.name" }},
-              { "variable": "address", "value": { "path": "$.additionalDetails.applicants.address" }},
-              { "variable": "nationalIdNo", "value": { "path": "$.additionalDetails.applicants.nationalIdNumber" }},
-              { "variable": "phone", "value": { "path": "$.applicants.*.mobileNumber" }},
-              { "variable": "companyName", "value": { "path": "$.applicant.company.name" }},
-              { "variable": "companyRegNo", "value": { "path": "$.applicant.company.regNo" }},
-              { "variable": "repFullName", "value": { "path": "$.applicant.company.representative" }},
-              { "variable": "siteLocation", "value": { "path": "$.serviceDetails.landandProjectDesignDetails.*.siteLocation" }},
-              { "variable": "area", "value": { "path": "$.serviceDetails.landandProjectDesignDetails.*.area" }},
-              { "variable": "legalStatus", "value": { "path": "$.serviceDetails.landandProjectDesignDetails.*.legalStatus" }},
-              { "variable": "tfNumber", "value": { "path": "$.serviceDetails.landandProjectDesignDetails.*.tfNumber" }},
-              { "variable": "registrationCertificate", "value": { "path": "$.serviceDetails.landandProjectDesignDetails.*.registrationCertificate" }},
-              { "variable": "other", "value": { "path": "$.serviceDetails.landandProjectDesignDetails.*.other" }},
-              { "variable": "nameOfDesignOffice", "value": { "path": "$.serviceDetails.designOfficeDetailing.*.nameOfDesignOffice" }},
-              { "variable": "architectName", "value": { "path": "$.serviceDetails.designOfficeDetailing.*.architectName" }},
-              { "variable": "architectPhone", "value": { "path": "$.serviceDetails.designOfficeDetailing.*.phone" }},
-              { "variable": "architectEmail", "value": { "path": "$.serviceDetails.designOfficeDetailing.*.officeEmail" }},
-              { "variable": "architectRegNo", "value": { "path": "$.serviceDetails.designOfficeDetailing.*.registrationNo" }},
-              { "variable": "workType", "value": { "path": "$.serviceDetails.landandProjectDesignDetails.*.workType" }},
-              { "variable": "maxCES", "value": { "path": "$.serviceDetails.landandProjectDesignDetails.*.maximumAuthorizedCes" }},
-              { "variable": "projectedCES", "value": { "path": "$.serviceDetails.landandProjectDesignDetails.*.prjectedCes" }},
-              { "variable": "maxCOS", "value": { "path": "$.serviceDetails.landandProjectDesignDetails.*.maximumAuthorizedCos" }},
-              { "variable": "projectedCOS", "value": { "path": "$.serviceDetails.landandProjectDesignDetails.*.projectedCos" }},
-              { "variable": "projectArea", "value": { "path": "$.serviceDetails.landandProjectDesignDetails.*.coveredProjectArea" }},
-              { "variable": "costPerM2", "value": { "path": "$.serviceDetails.landandProjectDesignDetails.*.constructionCostPerSqMt" }},
+              {
+                "variable": "wayToAddress",
+                "value": {
+                  "path": "$.additionalDetails.applicants.wayToAddress"
+                },
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
+                }
+              },
+              {
+                "variable": "fullName",
+                "value": {
+                  "path": "$.applicants.*.name"
+                }
+              },
+              {
+                "variable": "address",
+                "value": {
+                  "path": "$.additionalDetails.applicants.address"
+                }
+              },
+              {
+                "variable": "nationalIdNo",
+                "value": {
+                  "path": "$.additionalDetails.applicants.nationalIdNumber"
+                }
+              },
+              {
+                "variable": "phone",
+                "value": {
+                  "path": "$.applicants.*.mobileNumber"
+                }
+              },
+              {
+                "variable": "companyName",
+                "value": {
+                  "path": "$.applicant.company.name"
+                }
+              },
+              {
+                "variable": "companyRegNo",
+                "value": {
+                  "path": "$.applicant.company.regNo"
+                }
+              },
+              {
+                "variable": "repFullName",
+                "value": {
+                  "path": "$.applicant.company.representative"
+                }
+              },
+              {
+                "variable": "siteLocation",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.siteLocation"
+                }
+              },
+              {
+                "variable": "area",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.area"
+                }
+              },
+              {
+                "variable": "legalStatus",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.legalStatus"
+                }
+              },
+              {
+                "variable": "finalLandTiltle",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.definitiveLandTitle"
+                },
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
+                }
+              },
+              {
+                "variable": "tfNumber",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.tfNo"
+                }
+              },
+              {
+                "variable": "registrationCertificate",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.registrationCertificate"
+                },
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
+                }
+              },
+              {
+                "variable": "other",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.other"
+                }
+              },
+              {
+                "variable": "nameOfDesignOffice",
+                "value": {
+                  "path": "$.serviceDetails.designOfficeDetailing.*.nameOfDesignOffice"
+                }
+              },
+              {
+                "variable": "architectName",
+                "value": {
+                  "path": "$.serviceDetails.designOfficeDetailing.*.architectName"
+                }
+              },
+              {
+                "variable": "architectPhone",
+                "value": {
+                  "path": "$.serviceDetails.designOfficeDetailing.*.phone"
+                }
+              },
+              {
+                "variable": "architectEmail",
+                "value": {
+                  "path": "$.serviceDetails.designOfficeDetailing.*.officeEmail"
+                }
+              },
+              {
+                "variable": "architectRegNo",
+                "value": {
+                  "path": "$.serviceDetails.designOfficeDetailing.*.registrationNo"
+                }
+              },
+              {
+                "variable": "workType",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.workType"
+                },
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
+                }
+              },
+              {
+                "variable": "maxCES",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.maximumAuthorizedCes"
+                }
+              },
+              {
+                "variable": "projectedCES",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.prjectedCes"
+                }
+              },
+              {
+                "variable": "maxCOS",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.maximumAuthorizedCos"
+                }
+              },
+              {
+                "variable": "projectedCOS",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.projectedCos"
+                }
+              },
+              {
+                "variable": "projectArea",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.coveredProjectArea"
+                }
+              },
+              {
+                "variable": "costPerM2",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.constructionCostPerSqMt"
+                }
+              },
               {
                 "variable": "BPA_BPA_PCO_APPLICANTDETAILS",
                 "value": {
@@ -148,6 +304,30 @@
                 "variable": "BPA_BPA_PCO_LEGALSTATUS",
                 "value": {
                   "path": "BPA_BPA_PCO_LEGALSTATUS"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
+                }
+              },
+              {
+                "variable": "BPA_BPA_PCO_DEFINITIVELANDTITLE",
+                "value": {
+                  "path": "BPA_BPA_PCO_DEFINITIVELANDTITLE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
+                }
+              },
+              {
+                "variable": "BPA_BPA_PCO_TFNO",
+                "value": {
+                  "path": "BPA_BPA_PCO_TFNO"
                 },
                 "type": "label",
                 "localisation": {
@@ -292,6 +472,18 @@
                 "variable": "BPA_BPA_PCO_DESIGNOFFICEDETAILING",
                 "value": {
                   "path": "BPA_BPA_PCO_DESIGNOFFICEDETAILING"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
+                }
+              },
+              {
+                "variable": "BPA_BPA_PCO_DESIGNOFFIC_DECLARATION",
+                "value": {
+                  "path": "BPA_BPA_PCO_DESIGNOFFIC_DECLARATION"
                 },
                 "type": "label",
                 "localisation": {
@@ -624,7 +816,6 @@
                   "module": "rainmaker-studio-bpa"
                 }
               }
-              
             ]
           }
         ]
