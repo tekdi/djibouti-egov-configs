@@ -130,7 +130,7 @@
               {
                 "variable": "architectPhone",
                 "value": {
-                  "path": "$.serviceDetails.designOfficeDetailing.*.phone"
+                  "path": "$.serviceDetails.designOfficeDetailing.*.telephone"
                 }
               },
               {
@@ -481,9 +481,9 @@
                 }
               },
               {
-                "variable": "BPA_BPA_PCO_DESIGNOFFIC_DECLARATION",
+                "variable": "BPA_BPA_PCO_DESIGNOFFICE_DECLARATION",
                 "value": {
-                  "path": "BPA_BPA_PCO_DESIGNOFFIC_DECLARATION"
+                  "path": "BPA_BPA_PCO_DESIGNOFFICE_DECLARATION"
                 },
                 "type": "label",
                 "localisation": {
