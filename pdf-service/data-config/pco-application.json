@@ -541,6 +541,18 @@
                 }
               },
               {
+                "variable": "APPLICANTS_COMMITMENT",
+                "value": {
+                  "path": "APPLICANTS_COMMITMENT"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
+                }
+              },  
+              {
                 "variable": "BPA_BPA_PCO_ELIGIBILITYDECLARATION",
                 "value": {
                   "path": "BPA_BPA_PCO_ELIGIBILITYDECLARATION"
