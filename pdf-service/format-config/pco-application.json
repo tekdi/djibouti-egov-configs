@@ -423,7 +423,7 @@
                         "style": "sectionHeader"
                       },
                       {
-                        "text": "{{BPA_BPA_PCO_DESIGNOFFIC_DECLARATION}}",
+                        "text": "{{BPA_BPA_PCO_DESIGNOFFICE_DECLARATION}}",
                         "margin": [
                           0,
                           5
