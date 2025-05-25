@@ -36539,7 +36539,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId.keyword\",\"province\":\"province.keyword\",\"district\":\"district.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\",\"province\":\"province\",\"district\":\"district\"}",
         "indexName": "population-coverage-summary-datewise",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Houses Visited\":{\"date_histogram\":{\"field\":\"date\",\"fixed_interval\":\"1d\",\"min_doc_count\":1,\"format\":\"dd-MM-yyyy\"},\"aggs\":{\"Total children administered Count\":{\"sum\":{\"field\":\"total_population_administered\"}}}}}"
       }
