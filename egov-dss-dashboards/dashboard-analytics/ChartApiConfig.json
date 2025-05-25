@@ -31397,7 +31397,7 @@
         "dateRefField": "date",
         "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\",\"province\":\"province\"}",
         "indexName": "population-coverage-summary-datewise",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"total_population_refused\"}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"total_population_refused\"}}}}}}"
       },
       {
         "module": "COMMON",
@@ -31697,12 +31697,12 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\",\"province\":\"province\"}",
         "indexName": "population-coverage-summary",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Individual Coverage Ratio\":{\"terms\":{\"field\":\"district.keyword\"},\"aggs\":{\"Total Population covered\":{\"sum\":{\"field\":\"total_population_administered\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Individual Coverage Ratio\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"Total Population covered\":{\"sum\":{\"field\":\"total_population_administered\"}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\",\"province\":\"province.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\",\"province\":\"province\"}",
         "indexName": "household-coverage-summary-iccd",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Total visits\":{\"sum\":{\"field\":\"total_households_visited\"}}}}"
       },
@@ -31711,14 +31711,14 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\",\"province\":\"province\"}",
         "indexName": "population-coverage-summary",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total distribution\":{\"terms\":{\"field\":\"district.keyword\"},\"aggs\":{\"Total distribution count\":{\"sum\":{\"field\":\"total_administered_resources\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total distribution\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"Total distribution count\":{\"sum\":{\"field\":\"total_administered_resources\"}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\",\"province\":\"province\"}",
         "indexName": "population-coverage-summary",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"district.keyword\"},\"aggs\":{\"Refused non delivery count\":{\"sum\":{\"field\":\"total_refused\"}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"Refused non delivery count\":{\"sum\":{\"field\":\"total_refused\"}}}}}"
       },
       {
         "module": "COMMON",
