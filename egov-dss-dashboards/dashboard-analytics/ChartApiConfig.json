@@ -27343,7 +27343,7 @@
       {
         "module": "COMMON",
         "dateRefField": "date",
-        "requestQueryMap": "{\"projectTypeId\":\"projectTypeId\"}",
+        "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\"}",
         "indexName": "household-coverage-daily-iccd",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"houses visited today\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"province\"}}]}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"total_households_visited\"}}}}}}"
       }
@@ -27374,7 +27374,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"projectTypeId\"}",
+        "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\"}",
         "indexName": "household-coverage-summary-iccd",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"houses visited total\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"province\"}}]}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"total_households_visited\"}}}}}}"
       }
@@ -28308,7 +28308,7 @@
       {
         "module": "COMMON",
         "dateRefField": "date",
-        "requestQueryMap": "{\"projectTypeId\":\"projectTypeId\",\"province\":\"province\"}",
+        "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\",\"province\":\"province\"}",
         "indexName": "household-coverage-daily-iccd",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"DateRange Visited\":{\"sum\":{\"field\":\"total_households_visited\"}}}}"
       }
@@ -28330,7 +28330,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"projectTypeId\",\"province\":\"province\"}",
+        "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\",\"province\":\"province\"}",
         "indexName": "household-coverage-summary-iccd",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"total houses visited\":{\"sum\":{\"field\":\"total_households_visited\"}}}}"
       }
@@ -28387,7 +28387,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"projectTypeId\",\"province\":\"province\"}",
+        "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\",\"province\":\"province\"}",
         "indexName": "household-coverage-summary-iccd",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Total visits\":{\"sum\":{\"field\":\"total_households_visited\"}}}}"
       },
@@ -31718,7 +31718,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\",\"province\":\"province\"}",
         "indexName": "population-coverage-summary",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"Refused non delivery count\":{\"sum\":{\"field\":\"total_refused\"}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"Refused non delivery count\":{\"sum\":{\"field\":\"total_refused\"}}}}}}"
       },
       {
         "module": "COMMON",
