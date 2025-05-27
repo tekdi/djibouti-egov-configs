@@ -136,13 +136,13 @@
         "text": "Monsieur /Madame/Moral",
         "bold": true,
         "alignment": "center",
-        "margin": [0, -5, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       {
         "text": "{{CONTACT_PETITIONER}}",
         "bold": true,
         "alignment": "center",
-        "margin": [0, -5, 0, 10]
+        "margin": [0, 0, 0, 10]
       },
       {
         "text": [
@@ -187,7 +187,7 @@
                     ]
                   }
                 ],
-                "margin": [10, -5, 0, 0]
+                "margin": [10, 0, 0, 0]
               },
               {
                 "columns": [
@@ -201,7 +201,7 @@
                     ]
                   }
                 ],
-                "margin": [10, -5, 0, 0]
+                "margin": [10, 0, 0, 0]
               },
               {
                 "columns": [
@@ -213,7 +213,7 @@
                     ]
                   }
                 ],
-                "margin": [10, -5, 0, 0]
+                "margin": [10, 0, 0, 0]
               },
               {
                 "columns": [
@@ -225,7 +225,7 @@
                     ]
                   }
                 ],
-                "margin": [10, -5, 0, 0]
+                "margin": [10, 0, 0, 0]
               },
               {
                 "columns": [
@@ -237,7 +237,7 @@
                     ]
                   }
                 ],
-                "margin": [10, -5, 0, 0]
+                "margin": [10, 0, 0, 0]
               },
               {
                 "columns": [
@@ -249,7 +249,7 @@
                     ]
                   }
                 ],
-                "margin": [10, -5, 0, 0]
+                "margin": [10, 0, 0, 0]
               },
               {
                 "columns": [
@@ -261,7 +261,7 @@
                     ]
                   }
                 ],
-                "margin": [10, -5, 0, 0]
+                "margin": [10, 0, 0, 0]
               }
             ],
             "margin": [10, 0, 0, 10]
