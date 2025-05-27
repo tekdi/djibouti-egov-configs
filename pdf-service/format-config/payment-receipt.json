@@ -16,29 +16,24 @@
                   {
                     "stack": [
                       {
-                        "text": "REPUBLIC OF DJIBOUTI",
+                        "text": "{{REPUBLIC_OF_DJIBOUTI}}",
                         "style": "boldCenter"
                       },
                       {
-                        "text": "Unity-Equality-Peace",
+                        "text": "{{SLOGAN}}",
                         "alignment": "center",
                         "margin": [0, 0, 0, 5]
                       },
                       {
-                        "text": "Ministère de la Ville,",
+                        "text": "{{URBAN_AFFAIRS_MINISTRY}}",
                         "alignment": "center"
                       },
                       {
-                        "text": "of Urban Planning and Housing",
-                        "alignment": "center",
-                        "margin": [0, 0, 0, 5]
-                      },
-                      {
-                        "text": "LAND USE PLANNING AND DEVELOPMENT DEPARTMENT AND HABITAT",
+                        "text": "{{LAND_HABITAT}}",
                         "alignment": "center"
                       },
                       {
-                        "text": "THE MANAGER",
+                        "text": "{{THE_MANAGER}}",
                         "style": "boldCenter",
                         "margin": [0, 5, 0, 0]
                       },
@@ -90,11 +85,11 @@
                       {
                         "stack": [
                           {
-                            "text": "REPUBLIC OF DJIBOUTI",
+                            "text": "{{REPUBLIC_OF_DJIBOUTI}}",
                             "style": "boldCenter"
                           },
                           {
-                            "text": "Unity-Equality-Peace",
+                            "text": "{{SLOGAN}}",
                             "alignment": "center",
                             "margin": [0, 5, 0, 0]
                           }
@@ -114,11 +109,11 @@
                       {
                         "stack": [
                           {
-                            "text": "Submission date",
+                            "text": "{{SUBMISSION_DATE}}",
                             "style": "boldCenter"
                           },
                           {
-                            "text": "For preliminary inspection",
+                            "text": "{{FOR_PRELIMINARY_INSPECTION}}",
                             "style": "boldCenter"
                           }
                         ]
@@ -144,26 +139,26 @@
         "margin": [0, -5, 0, 0]
       },
       {
-        "text": "Contact Petitioner :",
+        "text": "{{CONTACT_PETITIONER}}",
         "bold": true,
         "alignment": "center",
         "margin": [0, -5, 0, 10]
       },
       {
         "text": [
-          {"text": "Subject: ", "bold": true, "underline": true},
-          {"text": "Tax payment for Ordinary Building Permit No. 81/2025 issued in your name"}
+          {"text": "{{SUBJECT}} ", "bold": true, "underline": true},
+          {"text": "{{PAYMENT_NOTE1}}"}
         ],
         "margin": [0, -5, 0, 5]
       },
       {
-        "text": "We kindly ask you to proceed with the payment of the fee for your Ordinary Building Permit as detailed below:",
+        "text": "{{PAYMENT_NOTE2}}",
         "margin": [0, 0, 0, 10]
       },
       {
         "stack": [
           {
-            "text": "• Details of the Permis de Construire Ordinaire :",
+            "text": "• {{PAYMENT_NOTE3}}",
             "bold": true,
             "decoration": "underline",
             "margin": [0, 0, 0, 5]
@@ -175,7 +170,7 @@
                   {
                     "width": "*",
                     "text": [
-                      { "text": "Building permit number: ", "bold": true },
+                      { "text": "{{BUILDING_PERMIT_NUMBER}} ", "bold": true },
                       { "text": "81/2025" }
                     ]
                   }
@@ -187,7 +182,7 @@
                   {
                     "width": "*",
                     "text": [
-                      { "text": "Presented by : ", "bold": true },
+                      { "text": "{{PRESENTED_BY}} ", "bold": true },
                       { "text": "SOCIETE M.T.I" }
                     ]
                   }
@@ -199,7 +194,7 @@
                   {
                     "width": "*",
                     "text": [
-                      { "text": "Type of project: ", "bold": true },
+                      { "text": "{{TYPE_PROJECT}} ", "bold": true },
                       { "text": "............, on a plot of ....." },
                       { "text": "m²", "bold": true },
                       { "text": "." }
@@ -213,7 +208,7 @@
                   {
                     "width": "*",
                     "text": [
-                      { "text": "Location: ", "bold": true },
+                      { "text": "{{LOCATION}} ", "bold": true },
                       { "text": ".................." }
                     ]
                   }
@@ -225,7 +220,7 @@
                   {
                     "width": "*",
                     "text": [
-                      { "text": "Land title number: ", "bold": true },
+                      { "text": "{{LAND_TITLE_NUMBER}} ", "bold": true },
                       { "text": ".................." }
                     ]
                   }
@@ -237,7 +232,7 @@
                   {
                     "width": "*",
                     "text": [
-                      { "text": "Built area: ", "bold": true },
+                      { "text": "{{BUILT_AREA}} ", "bold": true },
                       { "text": "................. m²" }
                     ]
                   }
@@ -249,7 +244,7 @@
                   {
                     "width": "*",
                     "text": [
-                      { "text": "Project author: ", "bold": true },
+                      { "text": "{{PROJECT_AUTHER}} ", "bold": true },
                       { "text": "................" }
                     ]
                   }
@@ -261,7 +256,7 @@
                   {
                     "width": "*",
                     "text": [
-                      { "text": "Architecture and design office: ", "bold": true },
+                      { "text": "{{DESIGN_OFFICE}} ", "bold": true },
                       { "text": "................" }
                     ]
                   }
@@ -274,7 +269,7 @@
         ]
       },
       {
-        "text": "• Payment details",
+        "text": "• {{PAYMENT_DETAILS}}",
         "bold": true,
         "decoration": "underline",
         "margin": [0, 0, 0, 5]
@@ -286,7 +281,7 @@
             [
               {
                 "colSpan": 5,
-                "text": "The amount of tax ....................... ( ...................... FDJ) and breaks down as follows:",
+                "text": "{{AMOUNT_OF_TAX}} ....................... ( ...................... FDJ) {{PAYMENT_NOTE4}}",
                 "border": [false, false, false, false]
               },
               {}, {}, {}, {}
@@ -294,14 +289,14 @@
             [
               {
                 "colSpan": 4,
-                "text": "- Royalty of 1.5% on the Building Permit applied to the Estimate",
+                "text": "- {{PAYMENT_NOTE5}}",
                 "italics": true,
                 "border": [true, true, true, true]
               },
               {}, {}, {}, {}
             ],
             [
-              { "text": "Or :", "border": [true, true, true, true], "alignment": "right" },
+              { "text": "{{OR}}", "border": [true, true, true, true], "alignment": "right" },
               { "text": ".................... FDj", "bold": true, "border": [true, true, true, true], "alignment": "center" },
               { "text": "x 1.5 %", "border": [true, true, true, true], "alignment": "center" },
               { "text": "....... ", "bold": true, "alignment": "right", "border": [true, true, true, true] },
@@ -310,14 +305,14 @@
             [
               {
                 "colSpan": 4,
-                "text": "- Paraseismic inspection fee of 1% applied to the estimate",
+                "text": "- {{PAYMENT_NOTE6}}",
                 "italics": true,
                 "border": [true, true, true, true]
               },
               {}, {}, {}, {}
             ],
             [
-              { "text": "Or :", "border": [true, true, true, true], "alignment": "right" },
+              { "text": "{{OR}}", "border": [true, true, true, true], "alignment": "right" },
               { "text": "....................FDj", "bold": true, "border": [true, true, true, true], "alignment": "center" },
               { "text": "x 1 %", "border": [true, true, true, true], "alignment": "center" },
               { "text": "....... ", "bold": true, "alignment": "right", "border": [true, true, true, true] },
@@ -327,9 +322,9 @@
               {
                 "colSpan": 4,
                 "text": [
-                  "- Service charges for the ",
-                  { "text": "National Register of Natural Persons, ", "bold": true, "italics": true },
-                  { "text": "Pursuant to ", "italics": true },
+                  "- {{PAYMENT_NOTE7}} ",
+                  { "text": "{{PAYMENT_NOTE8}}, ", "bold": true, "italics": true },
+                  { "text": "{{PURSUANT_TO}} ", "italics": true },
                   { "text": "Decree N°2021-017/PR/MI dated January 18, 2021", "bold": true, "italics": true }
                 ],
                 "italics": true,
@@ -341,24 +336,19 @@
               { "text": "", "border": [true, false, false, true] },
               { "text": "", "border": [false, false, false, true] },
               { "text": "", "border": [false, false, false, true] },
-              { "text": "Total =", "alignment": "right", "bold": true, "border": [false, false, false, true] },
+              { "text": "{{TOTAL}} =", "alignment": "right", "bold": true, "border": [false, false, false, true] },
               { "text": "....... FDj", "bold": true, "alignment": "right", "border": [true, true, true, true] }
             ]
           ]
         }
       },
       {
-        "text": "Director of Regional Planning,",
+        "text": "{{DIRECTOR_OF_REGIONAL_PLANNING}}",
         "alignment": "center",
         "bold": true
       },
       {
-        "text": "of Urban Planning and Housing",
-        "alignment": "center",
-        "bold": true
-      },
-      {
-        "text": "HABIB IBRAHIM MOHAMED",
+        "text": "HABIB_IBRAHIM_MOHAMED",
         "alignment": "center",
         "bold": true
       }

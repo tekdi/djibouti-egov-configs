@@ -18,10 +18,10 @@
               },
               {
                 "stack": [
-                  { "text": "REPUBLIC OF DJIBOUTI", "bold": true, "fontSize": 10, "alignment": "center", "color": "#FFFFFF" },
-                  { "text": "UNITY – EQUALITY – PEACE", "fontSize": 8, "alignment": "center", "color": "#FFFFFF" },
+                  { "text": "{{REPUBLIC_OF_DJIBOUTI}}", "bold": true, "fontSize": 10, "alignment": "center", "color": "#FFFFFF" },
+                  { "text": "{{SLOGAN}}", "fontSize": 8, "alignment": "center", "color": "#FFFFFF" },
                   {
-                    "text": "Minister of the City, Urban Planning and Housing",
+                    "text": "{{MINISTER_URBAN_HOUSING}}",
                     "bold": true,
                     "fontSize": 12,
                     "alignment": "center",
@@ -49,7 +49,7 @@
         "margin": [0, 0, 0, 10]
       },
       {
-        "text": "ORDINARY BUILDING PERMIT",
+        "text": "{{ORDINARY_BUILDING_PERMIT}}",
         "style": "mainTitle"
       },
       {
@@ -85,7 +85,7 @@
       {
         "stack": [
           {
-            "text": "DIRECTORATE OF TERRITORIAL PLANNING, URBAN PLANNING AND HOUSING",
+            "text": "{{DIRECTORATE_URBAN_PLANNING_HOUSING}}",
             "style": "sectionHeader",
             "margin": [0, 0, 0, -5]
           },
@@ -95,7 +95,7 @@
             "margin": [0, 0, 0, -5]
           },
           {
-            "text": "SUB-DIRECTORATE OF TERRITORIAL PLANNING AND URBAN PLANNING",
+            "text": "{{SUB_DIRECTORATE_TERRITORIAL_PLANNING_URBAN_PLANNING}}",
             "style": "sectionHeader",
             "margin": [0, 0, 0, -5]
           },
@@ -105,7 +105,7 @@
             "margin": [0, 0, 0, -5]
           },
           {
-            "text": "REGULATIONS AND AUTHORIZATIONS SERVICE",
+            "text": "{{REGULATIONS_AUTHORIZATIONS_SERVICE}}",
             "style": "sectionHeader"
           }
         ],
@@ -126,7 +126,7 @@
         "margin": [0, 0, 0, 5]
       },
       {
-        "text": "PERMIT INFORMATION",
+        "text": "{{PERMIT_INFORMATION}}",
         "color": "#007C87",
         "alignment": "center"
       },
@@ -149,20 +149,20 @@
           {
             "width": "50%",
             "stack": [
-              { "text": "Permit Number : 81/2025" },
-              { "text": "Date of Issue : May 15, 2025" },
-              { "text": "Validity : 2 years from the date of issue" },
-              { "text": "Submitted by : SOCIÉTÉ M.T.I" },
-              { "text": "Project Author : M. Ali Houmed" },
-              { "text": "Architecture Firm : ARCHI+" }
+              { "text": "{{PERMIT_NUMBER}} 81/2025" },
+              { "text": "{{DATE_OF_ISSUE}} May 15, 2025" },
+              { "text": "{{VALIDITY}}" },
+              { "text": "{{SUBMITTED_BY}} SOCIÉTÉ M.T.I" },
+              { "text": "{{PROJECT_AUTHER}} M. Ali Houmed" },
+              { "text": "{{ARCHITECTURE_FIRM}} ARCHI+" }
             ]
           },
           {
             "width": "50%",
             "stack": [
-              { "text": "Project Type : Construction of a hotel" },
-              { "text": "Plot Area : 2 000 m²" },
-              { "text": "Built Area : 1 200 m²" },
+              { "text": "{{PROJECT_TYPE}} Construction of a hotel" },
+              { "text": "{{PLOT_AREA}} 2 000 m²" },
+              { "text": "{{BUILT_AREA}} 1 200 m²" },
               {
                 "style": "locationBox",
                 "table": {
@@ -170,9 +170,9 @@
                   "body": [[
                     {
                       "stack": [
-                        { "text": "Location", "style": "locationTitle" },
-                        { "text": "Project Address : Quartier 7, Djibouti-ville" },
-                        { "text": "Land certificate : TF n°12345" }
+                        { "text": "{{LOCATION}}", "style": "locationTitle" },
+                        { "text": "{{PROJECT_ADDRESS}} Quartier 7, Djibouti-ville" },
+                        { "text": "{{LAND_CERTIFICATE}} TF n°12345" }
                       ]
                     }
                   ]]
@@ -189,7 +189,7 @@
         "margin": [0, 0, 0, 10]
       },
       {
-        "text": "LEGAL REFERENCES",
+        "text": "{{LEGAL_REFERENCES}}",
         "style": "boxTitle"
       },
       {
@@ -199,9 +199,9 @@
           "body": [[
             {
               "text": [
-                "Pursuant to Law No. 177/AN/91/2nd L of October 10, 1991 on land ownership organization, ",
-                "Pursuant to Decree No. 2015-228/PR/MHUE of April 4, 2015 on the reorganization of the procedure for examining and issuing building permits, ",
-                "Pursuant to the favorable opinion of the DATUH and competent authorities..."
+                "{{PERMIT_NOTE1}}, ",
+                "{{PERMIT_NOTE2}}, ",
+                "{{PERMIT_NOTE3}}..."
               ]
             }
           ]]
@@ -221,7 +221,7 @@
           "widths": ["*"],
           "body": [[
             {
-              "text": "Authorization is granted to [Name of the applicant] to carry out the above-mentioned construction project, subject to compliance with the applicable technical, environmental, and administrative requirements. This permit is valid for 2 years from the date of signature. Any violation will be subject to the penalties provided by law.",
+              "text": "{{PERMIT_NOTE4}}",
               "margin": [5, 5, 5, 5]
             }
           ]]
@@ -232,7 +232,7 @@
         "margin": [0, 0, 0, 10]
       },
       {
-        "text": "Permit Issuance : Issued following validation of the plans and receipt of all required regulatory approvals.",
+        "text": "{{PERMIT_NOTE5}}",
         "style": "permitNote"
       },
       {
@@ -255,7 +255,7 @@
             "width": "60%",
             "stack": [
               {
-                "text": "Issued by The Director of Territorial Planning, Urban Planning and Housing",
+                "text": "{{PERMIT_NOTE6}}",
                 "style": "issuedBy"
               },
               {
@@ -263,7 +263,7 @@
                 "style": "directorName"
               },
               {
-                "text": "Ampliations",
+                "text": "{{AMPLIATIONS}}",
                 "style": "ampliationsTitle"
               },
               {
@@ -282,7 +282,7 @@
         "margin": [0, 20, 0, 10]
       },
       {
-        "text": "© 2025 Directorate of Territorial Planning, Urban Planning and Housing – All rights reserved.",
+        "text": "© {{PERMIT_NOTE7}}",
         "style": "footer"
       }
     ],
