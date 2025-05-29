@@ -111,6 +111,10 @@
                           {
                             "text": "{{FOR_PRELIMINARY_INSPECTION}}",
                             "style": "boldCenter"
+                          },
+                          {
+                            "text": "{{receiptDate}}",
+                            "style": "boldCenter"
                           }
                         ]
                       }
@@ -151,14 +155,14 @@
         "margin": [0, 20, 0, 10]
       },
       {
-        "text": "{{NAME_OF_PETITIONER}} abc",
+        "text": "{{NAME_OF_PETITIONER}} {{petionerName}}",
         "bold": true,
         "margin": [0, 10, 0, 2]
       },
       {
         "columns": [
-          { "text": "{{FILED_BY}}  xyz", "bold": true, "width": "50%" },
-          { "text": "Phone: 23456876", "bold": true, "alignment": "right", "width": "50%" }
+          { "text": "{{FILED_BY}}  {{filedBy}}", "bold": true, "width": "50%" },
+          { "text": "{{BPA_BPA_PCO_TELEPHONE}}: {{phone}}", "bold": true, "alignment": "right", "width": "50%" }
         ],
         "margin": [0, -5, 80, -5]
       },
