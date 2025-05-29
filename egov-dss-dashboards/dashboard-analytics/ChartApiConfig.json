@@ -36158,7 +36158,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\",\"province\":\"province\"}",
         "indexName": "population-coverage-summary",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"district\",\"size\":500},\"aggs\":{\"Total children administered Count\":{\"sum\":{\"field\":\"total_population_administered\"}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"district\",\"size\":500},\"aggs\":{\"Total children administered Count\":{\"sum\":{\"field\":\"total_population_administered\"}}}}}}"
       }
     ],
     "filterKeys": [
@@ -36541,7 +36541,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\",\"province\":\"province\",\"district\":\"district\"}",
         "indexName": "population-coverage-summary-datewise",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Houses Visited\":{\"date_histogram\":{\"field\":\"date\",\"fixed_interval\":\"1d\",\"min_doc_count\":1,\"format\":\"dd-MM-yyyy\"},\"aggs\":{\"Total children administered Count\":{\"sum\":{\"field\":\"total_population_administered\"}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Houses Visited\":{\"date_histogram\":{\"field\":\"date\",\"fixed_interval\":\"1d\",\"min_doc_count\":1,\"format\":\"dd-MM-yyyy\"},\"aggs\":{\"Total children administered Count\":{\"sum\":{\"field\":\"total_population_administered\"}}}}}}"
       }
     ],
     "filterKeys": [
@@ -37211,7 +37211,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"cycle\",\"projectTypeId\":\"projectTypeId\",\"province\":\"province\"}",
         "indexName": "population-coverage-summary",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Cycle 1\":{\"filter\":{\"term\":{\"cycle\":\"01\"}},\"aggs\":{\"Cycle 1 Count\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"CYCLE_1\":{\"sum\":{\"field\":\"total_administered\"}}}}}},\"Cycle 2\":{\"filter\":{\"term\":{\"cycle\":\"02\"}},\"aggs\":{\"Cycle 2 Count\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"CYCLE_2\":{\"sum\":{\"field\":\"total_administered\"}}}}}},\"Cycle 3\":{\"filter\":{\"term\":{\"cycle\":\"03\"}},\"aggs\":{\"Cycle 3 Count\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"CYCLE_3\":{\"sum\":{\"field\":\"total_administered\"}}}}}},\"Cycle 4\":{\"filter\":{\"term\":{\"cycle\":\"04\"}},\"aggs\":{\"Cycle 4 Count\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"CYCLE_4\":{\"sum\":{\"field\":\"total_administered\"}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Cycle 1\":{\"filter\":{\"term\":{\"cycle\":\"01\"}},\"aggs\":{\"Cycle 1 Count\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"CYCLE_1\":{\"sum\":{\"field\":\"total_administered\"}}}}}},\"Cycle 2\":{\"filter\":{\"term\":{\"cycle\":\"02\"}},\"aggs\":{\"Cycle 2 Count\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"CYCLE_2\":{\"sum\":{\"field\":\"total_administered\"}}}}}},\"Cycle 3\":{\"filter\":{\"term\":{\"cycle\":\"03\"}},\"aggs\":{\"Cycle 3 Count\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"CYCLE_3\":{\"sum\":{\"field\":\"total_administered\"}}}}}},\"Cycle 4\":{\"filter\":{\"term\":{\"cycle\":\"04\"}},\"aggs\":{\"Cycle 4 Count\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"CYCLE_4\":{\"sum\":{\"field\":\"total_administered\"}}}}}}}}"
       },
       {
         "module": "COMMON",
