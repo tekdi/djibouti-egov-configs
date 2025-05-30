@@ -1,5 +1,5 @@
 {
-  "key": "permit-receipt",
+  "key": "pco-permit",
   "config": {
     "defaultStyle": {
       "font": "Cambay"
@@ -65,7 +65,7 @@
                     "style": "badgeLeft"
                   },
                   {
-                    "text": "   Year 2025",
+                    "text": "   Year {{registration_date}}",
                     "style": "badgeRight"
                   }
                 ],
@@ -149,20 +149,20 @@
           {
             "width": "50%",
             "stack": [
-              { "text": "{{PERMIT_NUMBER}} 81/2025" },
-              { "text": "{{DATE_OF_ISSUE}} May 15, 2025" },
+              { "text": "{{PERMIT_NUMBER}} {{applicationNumber}}" },
+              { "text": "{{DATE_OF_ISSUE}} {{issueanceDate}}" },
               { "text": "{{VALIDITY}}" },
-              { "text": "{{SUBMITTED_BY}} SOCIÉTÉ M.T.I" },
-              { "text": "{{PROJECT_AUTHER}} M. Ali Houmed" },
-              { "text": "{{ARCHITECTURE_FIRM}} ARCHI+" }
+              { "text": "{{SUBMITTED_BY}} {{fullName}}" },
+              { "text": "{{PROJECT_AUTHER}} {{fullName}}" },
+              { "text": "{{ARCHITECTURE_FIRM}} {{archietectureFirm}}" }
             ]
           },
           {
             "width": "50%",
             "stack": [
-              { "text": "{{PROJECT_TYPE}} Construction of a hotel" },
-              { "text": "{{PLOT_AREA}} 2 000 m²" },
-              { "text": "{{BUILT_AREA}} 1 200 m²" },
+              { "text": "{{PROJECT_TYPE}} {{projectType}}" },
+              { "text": "{{PLOT_AREA}} {{plotArea}} m²" },
+              { "text": "{{BUILT_AREA}} {{builtArea}} m²" },
               {
                 "style": "locationBox",
                 "table": {
@@ -171,8 +171,8 @@
                     {
                       "stack": [
                         { "text": "{{LOCATION}}", "style": "locationTitle" },
-                        { "text": "{{PROJECT_ADDRESS}} Quartier 7, Djibouti-ville" },
-                        { "text": "{{LAND_CERTIFICATE}} TF n°12345" }
+                        { "text": "{{PROJECT_ADDRESS}} {{projectAddress}}" },
+                        { "text": "{{LAND_CERTIFICATE}} {{tfNo}}" }
                       ]
                     }
                   ]]
@@ -334,7 +334,7 @@
       },
       "permitNote": {
         "fontSize": 10,
-        "italics": true,
+        "italic": true,
         "margin": [0, 0, 0, 10],
         "alignment": "center"
       },

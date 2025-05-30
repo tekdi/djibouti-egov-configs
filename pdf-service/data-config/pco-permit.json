@@ -1,9 +1,9 @@
 {
-  "key": "permit-receipt",
+  "key": "pco-permit",
   "DataConfigs": {
     "serviceName": "urban-permit",
     "version": "1.0.0",
-    "baseKeyPath": "$",
+    "baseKeyPath": "$.PublicService.*.Application.*",
     "entityIdPath":"$.id",
     "mappings": [
       {
@@ -22,6 +22,22 @@
                   "module": "rainmaker-studio-bpa"
                 }
               },
+              {
+                  "variable": "registration_date", 
+                  "value": {
+                    "path": "$.auditDetails.lastModifiedTime"
+                  },
+                   "type": "date",
+                   "format": "yyyy"
+                },
+                {
+                  "variable": "issueanceDate",
+                  "value": {
+                    "path": "$.auditDetails.lastModifiedTime"
+                  },
+                  "type": "date",
+                  "format": "MMMM d, yyyy"
+                },
               {
                 "variable": "SLOGAN",
                 "value": {
@@ -359,16 +375,53 @@
                 }
               },
               {
-                "variable": "applicationNumber",
+                  "variable": "applicationNumber",
+                  "value": {
+                    "path": "$.applicationNumber"
+                  }
+                },
+                {
+                  "variable": "fullName",
+                  "value": {
+                    "path": "$.applicants.*.name"
+                  }
+                },
+              {
+                "variable": "archietectureFirm",
                 "value": {
-                  "path": "$.applicationNumber"
+                  "path": "$.serviceDetails.designOfficeDetailing.*.nameOfDesignOffice"
                 }
-              }
-            ]
-          },
-          {
-            "label": [
-
+              },
+              {
+                  "variable": "projectType",
+                  "value": {
+                    "path": "$.serviceDetails.landandProjectDesignDetails.*.workType"
+                  }
+                },
+                {
+                  "variable": "plotArea",
+                  "value": {
+                    "path": "$.serviceDetails.landandProjectDesignDetails.*.area"
+                  }
+                },
+                {
+                  "variable": "builtArea",
+                  "value": {
+                    "path": "$.serviceDetails.landandProjectDesignDetails.*.coveredProjectArea"
+                  }
+                },
+                {
+                  "variable": "projectAddress",
+                  "value": {
+                    "path": "$.serviceDetails.landandProjectDesignDetails.*.siteLocation"
+                  }
+                },
+                {
+                  "variable": "tfNo",
+                  "value": {
+                    "path": "$.serviceDetails.landandProjectDesignDetails.*.tfNo"
+                  }
+                }
             ]
           }
         ]
