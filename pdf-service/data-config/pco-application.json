@@ -193,6 +193,13 @@
                 }
               },
               {
+                "variable": "submissionDate",
+                "value": {
+                  "path": "$.auditDetails.lastModifiedTime"
+                },
+                "type": "date"           
+              },
+              {
                 "variable": "BPA_BPA_PCO_APPLICANTDETAILS",
                 "value": {
                   "path": "BPA_BPA_PCO_APPLICANTDETAILS"

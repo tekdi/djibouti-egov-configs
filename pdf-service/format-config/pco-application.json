@@ -154,7 +154,7 @@
                             "style": "boldCenter"
                           },
                           {
-                            "text": "_____________________",
+                            "text": "{{submissionDate}}",
                             "style": "boldCenter"
                           }
                         ]
