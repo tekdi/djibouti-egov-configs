@@ -3,13 +3,30 @@
   "DataConfigs": {
     "serviceName": "urban-permit",
     "version": "1.0.0",
-    "baseKeyPath": "$",
+    "baseKeyPath": "$.PublicService.*.Application.*",
     "entityIdPath":"$.id",
     "mappings": [
       {
         "mappings": [
           {
             "direct": [
+              {
+                  "variable": "wayToAddress",
+                  "value": {
+                    "path": "$.additionalDetails.applicants.wayToAddress"
+                  },
+                  "localisation": {
+                    "required": true,
+                    "prefix": null,
+                    "module": "rainmaker-studio-bpa"
+                  }
+                },
+                {
+                  "variable": "fullName",
+                  "value": {
+                    "path": "$.applicants.*.name"
+                  }
+                },
               {
                 "variable": "REPUBLIC_OF_DJIBOUTI",
                 "value": {
@@ -407,18 +424,92 @@
                 }
               },
               {
+                  "variable": "HABIB_IBRAHIM_MOHAMED",
+                  "value": {
+                    "path": "HABIB_IBRAHIM_MOHAMED"
+                  },
+                  "type": "label",
+                  "localisation": {
+                    "required": true,
+                    "prefix": null,
+                    "module": "rainmaker-studio-bpa"
+                  }
+                },
+              {
                 "variable": "applicationNumber",
                 "value": {
                   "path": "$.applicationNumber"
                 }
-              }
-            ]
-          },
-          {
-            "label": [
-
+              },
+              {
+                  "variable": "projectType",
+                  "value": {
+                    "path": "$.serviceDetails.landandProjectDesignDetails.*.workType"
+                  }
+                },
+                {
+                  "variable": "projectAddress",
+                  "value": {
+                    "path": "$.serviceDetails.landandProjectDesignDetails.*.siteLocation"
+                  }
+                },
+                {
+                  "variable": "tfNo",
+                  "value": {
+                    "path": "$.serviceDetails.landandProjectDesignDetails.*.tfNo"
+                  }
+                },
+                {
+                  "variable": "archietectureFirm",
+                  "value": {
+                    "path": "$.serviceDetails.designOfficeDetailing.*.nameOfDesignOffice"
+                  }
+                },
+                {
+                  "variable": "fullName",
+                  "value": {
+                    "path": "$.applicants.*.name"
+                  }
+                },
+                {
+                  "variable": "builtArea",
+                  "value": {
+                    "path": "$.serviceDetails.landandProjectDesignDetails.*.coveredProjectArea"
+                  }
+                },
+                {
+                  "variable": "royalteeFee",
+                  "value": {
+                    "path": "$.additionalDetails.costEstimation.royaltyFee"
+                  }
+                },
+                {
+                  "variable": "eqResistanceFee",
+                  "value": {
+                    "path": "$.additionalDetails.costEstimation.eqResistanceCost"
+                  }
+                },
+                {
+                  "variable": "totalCost",
+                  "value": {
+                    "path": "$.additionalDetails.costEstimation.royaltotalBuildingCosttyFee"
+                  }
+                },
+                {
+                  "variable": "registryFee",
+                  "value": {
+                    "path": "$.additionalDetails.costEstimation.registryServiceFee"
+                  }
+                },
+                {
+                  "variable": "totalTaxWithServiceCharge",
+                  "value": {
+                    "path": "$.additionalDetails.costEstimation.totalTaxWithServiceCharge"
+                  }
+                }
             ]
           }
+         
         ]
       }
     ]

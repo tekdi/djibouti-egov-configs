@@ -37,17 +37,13 @@
                         "style": "boldCenter",
                         "margin": [0, 5, 0, 0]
                       },
-                      {
-                        "text": "N°.......................................................",
-                        "alignment": "center",
-                        "margin": [0, 10, 0, 0]
-                      },
+                      
                       {
                         "text": "/DATUH",
                         "alignment": "left"
                       },
                       {
-                        "text": "Djibouti, le...............................",
+                        "text": "Djibouti, le  ",
                         "alignment": "left"
                       }
                     ]
@@ -133,13 +129,13 @@
         "alignment": "center"
       },
       {
-        "text": "Monsieur /Madame/Moral",
+        "text": "{{wayToAddress}}",
         "bold": true,
         "alignment": "center",
         "margin": [0, 0, 0, 0]
       },
       {
-        "text": "{{CONTACT_PETITIONER}}",
+        "text": "{{CONTACT_PETITIONER}}{{fullName}}",
         "bold": true,
         "alignment": "center",
         "margin": [0, 0, 0, 10]
@@ -147,7 +143,7 @@
       {
         "text": [
           {"text": "{{SUBJECT}} ", "bold": true, "underline": true},
-          {"text": "{{PAYMENT_NOTE1}}"}
+          {"text": "{{PAYMENT_NOTE1}} {{applicationNumber}} {{PAYMENT_NOTE1.1}}"}
         ],
         "margin": [0, -5, 0, 5]
       },
@@ -171,7 +167,7 @@
                     "width": "*",
                     "text": [
                       { "text": "{{BUILDING_PERMIT_NUMBER}} ", "bold": true },
-                      { "text": "81/2025" }
+                      { "text": "{{applicationNumber}}" }
                     ]
                   }
                 ],
@@ -183,7 +179,7 @@
                     "width": "*",
                     "text": [
                       { "text": "{{PRESENTED_BY}} ", "bold": true },
-                      { "text": "SOCIETE M.T.I" }
+                      { "text": "{{fullName}}" }
                     ]
                   }
                 ],
@@ -195,9 +191,7 @@
                     "width": "*",
                     "text": [
                       { "text": "{{TYPE_PROJECT}} ", "bold": true },
-                      { "text": "............, on a plot of ....." },
-                      { "text": "m²", "bold": true },
-                      { "text": "." }
+                      { "text": "{{projectType}}" }
                     ]
                   }
                 ],
@@ -209,7 +203,7 @@
                     "width": "*",
                     "text": [
                       { "text": "{{LOCATION}} ", "bold": true },
-                      { "text": ".................." }
+                      { "text": "{{projectAddress}}" }
                     ]
                   }
                 ],
@@ -221,7 +215,7 @@
                     "width": "*",
                     "text": [
                       { "text": "{{LAND_TITLE_NUMBER}} ", "bold": true },
-                      { "text": ".................." }
+                      { "text": "{{tfNo}}" }
                     ]
                   }
                 ],
@@ -233,7 +227,7 @@
                     "width": "*",
                     "text": [
                       { "text": "{{BUILT_AREA}} ", "bold": true },
-                      { "text": "................. m²" }
+                      { "text": "{{builtArea}}" }
                     ]
                   }
                 ],
@@ -245,7 +239,7 @@
                     "width": "*",
                     "text": [
                       { "text": "{{PROJECT_AUTHER}} ", "bold": true },
-                      { "text": "................" }
+                      { "text": "{{fullName}}" }
                     ]
                   }
                 ],
@@ -257,7 +251,7 @@
                     "width": "*",
                     "text": [
                       { "text": "{{DESIGN_OFFICE}} ", "bold": true },
-                      { "text": "................" }
+                      { "text": "{{archietectureFirm}}" }
                     ]
                   }
                 ],
@@ -281,7 +275,7 @@
             [
               {
                 "colSpan": 5,
-                "text": "{{AMOUNT_OF_TAX}} ....................... ( ...................... FDJ) {{PAYMENT_NOTE4}}",
+                "text": "{{AMOUNT_OF_TAX}} {{totalTaxWithServiceCharge}} {{PAYMENT_NOTE4}}",
                 "border": [false, false, false, false]
               },
               {}, {}, {}, {}
@@ -290,54 +284,60 @@
               {
                 "colSpan": 4,
                 "text": "- {{PAYMENT_NOTE5}}",
-                "italics": true,
+                "italic": true,
                 "border": [true, true, true, true]
               },
               {}, {}, {}, {}
             ],
             [
               { "text": "{{OR}}", "border": [true, true, true, true], "alignment": "right" },
-              { "text": ".................... FDj", "bold": true, "border": [true, true, true, true], "alignment": "center" },
+              { "text": "{{totalCost}} FDj", "bold": true, "border": [true, true, true, true], "alignment": "center" },
               { "text": "x 1.5 %", "border": [true, true, true, true], "alignment": "center" },
-              { "text": "....... ", "bold": true, "alignment": "right", "border": [true, true, true, true] },
-              { "text": "....... FDj", "bold": true, "alignment": "right", "border": [true, true, true, true] }
+              { "text": "{{royalteeFee}} ", "bold": true, "alignment": "right", "border": [true, true, true, true] },
+              { "text": "{{royalteeFee}} FDj", "bold": true, "alignment": "right", "border": [true, true, true, true] }
             ],
             [
               {
                 "colSpan": 4,
                 "text": "- {{PAYMENT_NOTE6}}",
-                "italics": true,
+                "italic": true,
                 "border": [true, true, true, true]
               },
               {}, {}, {}, {}
             ],
             [
               { "text": "{{OR}}", "border": [true, true, true, true], "alignment": "right" },
-              { "text": "....................FDj", "bold": true, "border": [true, true, true, true], "alignment": "center" },
+              { "text": "{{totalCost}} FDj", "bold": true, "border": [true, true, true, true], "alignment": "center" },
               { "text": "x 1 %", "border": [true, true, true, true], "alignment": "center" },
-              { "text": "....... ", "bold": true, "alignment": "right", "border": [true, true, true, true] },
-              { "text": "....... FDj", "bold": true, "alignment": "right", "border": [true, true, true, true] }
+              { "text": "{{eqResistanceFee}} ", "bold": true, "alignment": "right", "border": [true, true, true, true] },
+              { "text": "{{eqResistanceFee}} FDj", "bold": true, "alignment": "right", "border": [true, true, true, true] }
             ],
-            [
-              {
-                "colSpan": 4,
-                "text": [
-                  "- {{PAYMENT_NOTE7}} ",
-                  { "text": "{{PAYMENT_NOTE8}}, ", "bold": true, "italics": true },
-                  { "text": "{{PURSUANT_TO}} ", "italics": true },
-                  { "text": "Decree N°2021-017/PR/MI dated January 18, 2021", "bold": true, "italics": true }
-                ],
-                "italics": true,
-                "border": [true, true, true, true]
-              },
-              {}, {}, {}, {}
+              [{
+                  "text": [
+                    "- {{PAYMENT_NOTE7}} ",
+                    { "text": "{{PAYMENT_NOTE8}}, ", "bold": true, "italic": true },
+                    { "text": "{{PURSUANT_TO}} ", "italic": true },
+                    { "text": "Decree N°2021-017/PR/MI ", "bold": true, "italic": true }
+                  ],
+                  "colSpan": 4,
+                  "alignment": "left",
+                  "border": [true, true, false, true],
+                  "italic": true
+                },
+                {}, {}, {}, 
+                {
+                  "text": "{{registryFee}}",
+                  "alignment": "right",
+                  "bold": true,
+                  "border": [true, true, true, true]
+                }
             ],
             [
               { "text": "", "border": [true, false, false, true] },
               { "text": "", "border": [false, false, false, true] },
               { "text": "", "border": [false, false, false, true] },
               { "text": "{{TOTAL}} =", "alignment": "right", "bold": true, "border": [false, false, false, true] },
-              { "text": "....... FDj", "bold": true, "alignment": "right", "border": [true, true, true, true] }
+              { "text": "{{totalTaxWithServiceCharge}}", "bold": true, "alignment": "right", "border": [true, true, true, true] }
             ]
           ]
         }
@@ -348,7 +348,7 @@
         "bold": true
       },
       {
-        "text": "HABIB_IBRAHIM_MOHAMED",
+        "text": "{{HABIB_IBRAHIM_MOHAMED}}",
         "alignment": "center",
         "bold": true
       }
@@ -384,4 +384,3 @@
     }
   }
 }
-
