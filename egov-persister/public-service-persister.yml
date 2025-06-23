@@ -166,9 +166,9 @@ serviceMaps:
       queryMaps:
         - query: >
             INSERT INTO service (
-              id, tenant_id, module, business_service, status, service_code,
+              id, tenant_id, module, business_service, status, service_code, display_order, 
               additional_details, createdby, last_modifiedby, created_at, updated_at
-            ) VALUES (?::uuid, ?, ?, ?, ?, ?, ?, ?, ?, to_timestamp(? / 1000), to_timestamp(? / 1000));
+            ) VALUES (?::uuid, ?, ?, ?, ?, ?, ?, ?, ?, ?, to_timestamp(? / 1000), to_timestamp(? / 1000));
           basePath: $.Service
           jsonMaps:
             - jsonPath: $.Service.id
@@ -177,6 +177,7 @@ serviceMaps:
             - jsonPath: $.Service.businessService
             - jsonPath: $.Service.status
             - jsonPath: $.Service.serviceCode
+            - jsonPath: $.Service.displayOrder
             - jsonPath: $.Service.additionalDetails
               type: JSON
               dbType: JSONB
@@ -194,6 +195,7 @@ serviceMaps:
                 module = ?,
                 business_service = ?,
                 status = ?,
+                display_order = ?,
                 additional_details = ?,
                 last_modifiedby = ?,
                 updated_at = to_timestamp(? / 1000.0)
@@ -204,6 +206,7 @@ serviceMaps:
             - jsonPath: $.Service.module
             - jsonPath: $.Service.businessService
             - jsonPath: $.Service.status
+            - jsonPath: $.Service.displayOrder
             - jsonPath: $.Service.additionalDetails
               type: JSON
               dbType: JSONB
