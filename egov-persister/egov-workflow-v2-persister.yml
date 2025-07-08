@@ -6,7 +6,7 @@ serviceMaps:
       fromTopic: save-wf-transitions
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO eg_wf_processinstance_v2( id,tenantid,businessService,businessId,moduleName,action,status,comment, assigner, stateSla,businessServiceSla, previousStatus, createdby, lastmodifiedby, createdtime, lastmodifiedtime, rating, escalated, triggerSelectiveParallelWorkflows) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO eg_wf_processinstance_v2( id,tenantid,businessService,businessId,moduleName,action,status,comment, assigner, stateSla,businessServiceSla, previousStatus, createdby, lastmodifiedby, createdtime, lastmodifiedtime, rating, escalated, triggerselectiveparallelworkflows) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: ProcessInstances.*
           jsonMaps:
             - jsonPath: $.ProcessInstances.*.id
