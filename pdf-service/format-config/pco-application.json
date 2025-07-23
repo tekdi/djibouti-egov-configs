@@ -276,6 +276,55 @@
               {
                 "stack": [
                   {
+                    "text": "{{BPA_BPA_PCO_SIMPLE_LEGALENTITYDETAILS}}",
+                    "style": "sectionHeader"
+                  },
+                  {
+                    "text": "{{BPA_BPA_PCO_SIMPLE_CORPORATENAME}}:{{corporateName}}",
+                    "margin": [
+                      0,
+                      5
+                    ]
+                  },
+                  {
+                    "text": "{{BPA_BPA_PCO_SIMPLE_REGISTRATIONNUMBER}}: {{registrationNumber}}",
+                    "margin": [
+                      0,
+                      5
+                    ]
+                  },
+                  {
+                    "text": "{{BPA_BPA_PCO_SIMPLE_COMPANYTYPE}}: {{companyType}}",
+                    "margin": [
+                      0,
+                      5
+                    ]
+                  },
+                  {
+                    "text": "{{BPA_BPA_PCO_SIMPLE_OTHERCOMPANYTYPE}}: {{otherCompanyType}}",
+                    "margin": [
+                      0,
+                      5
+                    ]
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "box"
+      },
+      {
+        "style": "sectionBox",
+        "table": {
+          "widths": [
+            "*"
+          ],
+          "body": [
+            [
+              {
+                "stack": [
+                  {
                     "text": "{{BPA_BPA_PCO_LANDANDPROJECTDESIGNDETAILS}}",
                     "style": "sectionHeader"
                   },
