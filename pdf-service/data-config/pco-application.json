@@ -64,6 +64,31 @@
                 }
               },
               {
+                "variable": "companyType",
+                "value": {
+                  "path": "$.serviceDetails.legalEntityDetails.*.companyType"
+                }
+              },
+              {
+                "variable": "corporateName",
+                "value": {
+                  "path": "$.serviceDetails.legalEntityDetails.*.corporateName"
+                }
+              },
+              {
+                "variable": "otherCompanyType",
+                "value": {
+                  "path": "$.serviceDetails.legalEntityDetails.*.otherCompanyType"
+                }
+              },
+              {
+                "variable": "registrationNumber",
+                "value": {
+                  "path": "$.serviceDetails.legalEntityDetails.*.registrationNumber"
+                }
+              },
+              
+              {
                 "variable": "siteLocation",
                 "value": {
                   "path": "$.serviceDetails.landandProjectDesignDetails.*.siteLocation"
@@ -272,9 +297,57 @@
                 }
               },
               {
-                "variable": "BPA_BPA_PCO_LANDANDPROJECTDESIGNDETAILS",
+                "variable": "BPA_BPA_PCO_SIMPLE_CORPORATENAME",
                 "value": {
-                  "path": "BPA_BPA_PCO_LANDANDPROJECTDESIGNDETAILS"
+                  "path": "BPA_BPA_PCO_SIMPLE_CORPORATENAME"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
+                }
+              },
+              {
+                "variable": "BPA_BPA_PCO_SIMPLE_REGISTRATIONNUMBER",
+                "value": {
+                  "path": "BPA_BPA_PCO_SIMPLE_REGISTRATIONNUMBER"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
+                }
+              },
+              {
+                "variable": "BPA_BPA_PCO_SIMPLE_REGISTRATIONNUMBER",
+                "value": {
+                  "path": "BPA_BPA_PCO_SIMPLE_REGISTRATIONNUMBER"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
+                }
+              },
+              {
+                "variable": "BPA_BPA_PCO_SIMPLE_COMPANYTYPE",
+                "value": {
+                  "path": "BPA_BPA_PCO_SIMPLE_COMPANYTYPE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
+                }
+              },
+              {
+                "variable": "BPA_BPA_PCO_SIMPLE_OTHERCOMPANYTYPE",
+                "value": {
+                  "path": "BPA_BPA_PCO_SIMPLE_OTHERCOMPANYTYPE"
                 },
                 "type": "label",
                 "localisation": {
