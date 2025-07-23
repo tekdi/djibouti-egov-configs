@@ -442,11 +442,16 @@
                   }
                 },
                 {
-                    "variable": "projectType",
-                    "value": {
-                      "path": "$.serviceDetails.landandProjectDesignDetails.*.workType"
-                    }
+                  "variable": "projectType",
+                  "value": {
+                    "path": "$.serviceDetails.landandProjectDesignDetails.*.workType"
                   },
+                  "localisation": {
+                    "required": true,
+                    "prefix": null,
+                    "module": "rainmaker-studio-bpa"
+                  }
+                },
                   {
                     "variable": "projectAddress",
                     "value": {
