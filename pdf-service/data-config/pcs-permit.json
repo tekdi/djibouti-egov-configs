@@ -1,5 +1,5 @@
 {
-    "key": "pco-permit",
+    "key": "pcs-permit",
     "DataConfigs": {
       "serviceName": "urban-permit",
       "version": "1.0.0",
@@ -62,9 +62,9 @@
                   }
                 },
                 {
-                  "variable": "ORDINARY_BUILDING_PERMIT",
+                  "variable": "SIMPLIFIED_BUILDING_PERMIT",
                   "value": {
-                    "path": "ORDINARY_BUILDING_PERMIT"
+                    "path": "SIMPLIFIED_BUILDING_PERMIT"
                   },
                   "type": "label",
                   "localisation": {
@@ -397,10 +397,10 @@
                       "path": "$.serviceDetails.landandProjectDesignDetails.*.workType"
                     },
                     "localisation": {
-                      "required": true,
-                      "prefix": null,
-                      "module": "rainmaker-studio-bpa"
-                    }
+                        "required": true,
+                        "prefix": null,
+                        "module": "rainmaker-studio-bpa"
+                      }
                   },
                   {
                     "variable": "plotArea",
