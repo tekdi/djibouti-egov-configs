@@ -1,5 +1,5 @@
 {
-    "key": "pl-permit",
+    "key": "pd-permit",
     "DataConfigs": {
       "serviceName": "urban-permit",
       "version": "1.0.0",
@@ -62,9 +62,9 @@
                   }
                 },
                 {
-                  "variable": "LOTTING_PERMIT_APPLICATION",
+                  "variable": "DEMOLITION_PERMIT",
                   "value": {
-                    "path": "LOTTING_PERMIT_APPLICATION"
+                    "path": "DEMOLITION_PERMIT"
                   },
                   "type": "label",
                   "localisation": {
@@ -182,18 +182,6 @@
                   }
                 },
                 {
-                  "variable": "ARCHITECTURE_FIRM",
-                  "value": {
-                    "path": "ARCHITECTURE_FIRM"
-                  },
-                  "type": "label",
-                  "localisation": {
-                    "required": true,
-                    "prefix": null,
-                    "module": "rainmaker-studio-bpa"
-                  }
-                },
-                {
                   "variable": "PROJECT_TYPE",
                   "value": {
                     "path": "PROJECT_TYPE"
@@ -209,18 +197,6 @@
                   "variable": "PLOT_AREA",
                   "value": {
                     "path": "PLOT_AREA"
-                  },
-                  "type": "label",
-                  "localisation": {
-                    "required": true,
-                    "prefix": null,
-                    "module": "rainmaker-studio-bpa"
-                  }
-                },
-                {
-                  "variable": "BUILT_AREA",
-                  "value": {
-                    "path": "BUILT_AREA"
                   },
                   "type": "label",
                   "localisation": {
@@ -406,12 +382,6 @@
                     "variable": "plotArea",
                     "value": {
                       "path": "$.serviceDetails.landandProjectDesignDetails.*.area"
-                    }
-                  },
-                  {
-                    "variable": "builtArea",
-                    "value": {
-                      "path": "$.serviceDetails.landandProjectDesignDetails.*.coveredProjectArea"
                     }
                   },
                   {
