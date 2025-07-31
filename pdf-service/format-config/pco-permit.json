@@ -161,6 +161,7 @@
               "width": "50%",
               "stack": [
                 { "text": "{{PROJECT_TYPE}} {{projectType}}" },
+                { "text": "{{BPA_BPA_PCO_INTENDEDUSE}} {{intededUse}}" },
                 { "text": "{{PLOT_AREA}} {{plotArea}} m²" },
                 { "text": "{{BUILT_AREA}} {{builtArea}} m²" },
                 {

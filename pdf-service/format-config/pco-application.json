@@ -393,6 +393,13 @@
                     ]
                   },
                   {
+                    "text": "{{BPA_BPA_PCO_INTENDEDUSE}}: {{other}}",
+                    "margin": [
+                      0,
+                      5
+                    ]
+                  },
+                  {
                     "text": "{{BPA_BPA_PCO_NOOFUNITS}}: {{other}}",
                     "margin": [
                       0,
