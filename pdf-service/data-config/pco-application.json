@@ -140,6 +140,7 @@
                   "path": "$.serviceDetails.landandProjectDesignDetails.*.other"
                 }
               },
+             
               {
                 "variable": "nameOfDesignOffice",
                 "value": {
@@ -185,6 +186,28 @@
                 "variable": "intededUse",
                 "value": {
                   "path": "$.serviceDetails.landandProjectDesignDetails.*.intededUse"
+                },
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
+                }
+              },
+              {
+                "variable": "noOfUnits",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.noOfUnits"
+                },
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
+                }
+              },
+              {
+                "variable": "detailsOnOtherType",
+                "value": {
+                  "path": "$.serviceDetails.landandProjectDesignDetails.*.detailsOnOtherType"
                 },
                 "localisation": {
                   "required": true,
@@ -455,6 +478,18 @@
                 "variable": "BPA_BPA_PCO_WORKTYPE",
                 "value": {
                   "path": "BPA_BPA_PCO_WORKTYPE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
+                }
+              },
+              {
+                "variable": "BPA_BPA_PCO_INTENDEDUSE",
+                "value": {
+                  "path": "BPA_BPA_PCO_INTENDEDUSE"
                 },
                 "type": "label",
                 "localisation": {

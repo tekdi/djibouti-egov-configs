@@ -386,28 +386,28 @@
                     ]
                   },
                   {
-                    "text": "{{BPA_BPA_PCO_WORKTYPE}}: {{other}}",
+                    "text": "{{BPA_BPA_PCO_WORKTYPE}}: {{workType}}",
                     "margin": [
                       0,
                       5
                     ]
                   },
                   {
-                    "text": "{{BPA_BPA_PCO_INTENDEDUSE}}: {{other}}",
+                    "text": "{{BPA_BPA_PCO_INTENDEDUSE}}: {{intededUse}}",
                     "margin": [
                       0,
                       5
                     ]
                   },
                   {
-                    "text": "{{BPA_BPA_PCO_NOOFUNITS}}: {{other}}",
+                    "text": "{{BPA_BPA_PCO_NOOFUNITS}}: {{noOfUnits}}",
                     "margin": [
                       0,
                       5
                     ]
                   },
                   {
-                    "text": "{{BPA_BPA_PCO_DETAILSONOTHERTYPE}}: {{other}}",
+                    "text": "{{BPA_BPA_PCO_DETAILSONOTHERTYPE}}: {{detailsOnOtherType}}",
                     "margin": [
                       0,
                       5

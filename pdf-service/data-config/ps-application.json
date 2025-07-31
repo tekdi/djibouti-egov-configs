@@ -105,6 +105,12 @@
                                 }
                             },
                             {
+                                "variable": "intededUse",
+                                "value": {
+                                    "path": "$.serviceDetails.landandProjectDesignDetails.*.intededUse"
+                                }
+                            },
+                            {
                                 "variable": "legalStatus",
                                 "value": {
                                     "path": "$.serviceDetails.landandProjectDesignDetails.*.legalStatus"
@@ -424,6 +430,18 @@
                                 "variable": "BPA_BPA_PCO_AREA",
                                 "value": {
                                     "path": "BPA_BPA_PCO_AREA"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-studio-bpa"
+                                }
+                            },
+                            {
+                                "variable": "BPA_BPA_PCO_INTENDEDUSE",
+                                "value": {
+                                    "path": "BPA_BPA_PCO_INTENDEDUSE"
                                 },
                                 "type": "label",
                                 "localisation": {

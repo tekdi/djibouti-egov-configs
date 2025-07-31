@@ -350,6 +350,13 @@
                     ]
                   },
                   {
+                    "text": "{{BPA_BPA_PCO_INTENDEDUSE}}: {{intededUse}}",
+                    "margin": [
+                      0,
+                      5
+                    ]
+                  },
+                  {
                     "text": "{{BPA_BPA_PCO_LEGALSTATUS}}: {{legalStatus}}",
                     "margin": [
                       0,
