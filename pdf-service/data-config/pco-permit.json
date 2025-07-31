@@ -206,6 +206,18 @@
                   }
                 },
                 {
+                  "variable": "BPA_BPA_PCO_INTENDEDUSE",
+                  "value": {
+                    "path": "BPA_BPA_PCO_INTENDEDUSE"
+                  },
+                  "type": "label",
+                  "localisation": {
+                    "required": true,
+                    "prefix": null,
+                    "module": "rainmaker-studio-bpa"
+                  }
+                },
+                {
                   "variable": "PLOT_AREA",
                   "value": {
                     "path": "PLOT_AREA"
@@ -395,6 +407,17 @@
                     "variable": "projectType",
                     "value": {
                       "path": "$.serviceDetails.landandProjectDesignDetails.*.workType"
+                    },
+                    "localisation": {
+                      "required": true,
+                      "prefix": null,
+                      "module": "rainmaker-studio-bpa"
+                    }
+                  },
+                  {
+                    "variable": "intededUse",
+                    "value": {
+                      "path": "$.serviceDetails.landandProjectDesignDetails.*.intededUse"
                     },
                     "localisation": {
                       "required": true,
