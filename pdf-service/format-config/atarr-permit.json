@@ -162,6 +162,7 @@
                 { "text": "{{PROJECT_TYPE}} {{projectType}}" },
                 { "text": "{{PLOT_AREA}} {{plotArea}} m²" },
                 { "text": "{{BUILT_AREA}} {{builtArea}} m²" },
+                { "text": "{{BPA_BPA_PCO_INTENDEDUSE}} {{intededUse}}" },
                 {
                   "style": "locationBox",
                   "table": {
