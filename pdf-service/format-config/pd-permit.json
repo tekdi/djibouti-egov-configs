@@ -197,10 +197,19 @@
             "widths": ["*"],
             "body": [[
               {
-                "text": [
-                  "{{PERMIT_NOTE1}}, ",
-                  "{{PERMIT_NOTE2}}, ",
-                  "{{PERMIT_NOTE3}}..."
+                "stack": [
+                    { "text": "{{NOTE}}", "bold": true }, 
+                    { "text": "{{PD_LR_ARTICLE_1}}", "bold": true },
+                  { "text": "{{PD_LR_ARTICLE_11}}"},
+                  {
+                    "ul": [
+                      "{{PD_LR_ARTICLE_12}}",
+                      "{{PD_LR_ARTICLE_13}}",
+                      "{{PD_LR_ARTICLE_14}}"
+                    ]
+                ,"margin": [10, 0, 0, 10] },
+                { "text": "{{PD_LR_ARTICLE_2}}", "bold": true },
+                  { "text": "{{PD_LR_ARTICLE_21}}"}
                 ]
               }
             ]]
