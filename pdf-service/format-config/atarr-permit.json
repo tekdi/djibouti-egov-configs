@@ -402,6 +402,32 @@
                     "text": "{{PS_LR_25}}"
                   },
                   {
+                    "text": "{{PS_LR_26}}"
+                  },
+                  {
+                    "text": "{{PS_LR_27}}"
+                  },
+                  {
+                    "ul": [
+                      "{{PS_LR_28}}",
+                      "{{PS_LR_29}}",
+                      "{{PS_LR_30}}",
+                      "{{PS_LR_31}}",
+                      "{{PS_LR_32}}",
+                      "{{PS_LR_33}}",
+                      "{{PS_LR_34}}",
+                      "{{PS_LR_35}}",
+                      "{{PS_LR_36}}",
+                      "{{PS_LR_37}}"
+                    ],
+                    "margin": [
+                      10,
+                      0,
+                      0,
+                      10
+                    ]
+                  },
+                  {
                     "text": "{{NOTE}}",
                     "bold": true
                   },
@@ -413,98 +439,27 @@
                     "text": "{{PS_LR_ARTICLE_11}}"
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_12}}"
-                  },
-                  {
-                    "text": "{{PS_LR_ARTICLE_13}}"
-                  },
-                  {
-                    "ul": [
-                      "{{PS_LR_ARTICLE_14}}",
-                      "{{PS_LR_ARTICLE_15}}"
-                    ],
-                    "margin": [
-                      10,
-                      0,
-                      0,
-                      10
-                    ]
-                  },
-                  {
-                    "text": "{{PS_LR_ARTICLE_16}}"
-                  },
-                  {
-                    "text": "{{PS_LR_ARTICLE_17}}"
-                  },
-                  {
-                    "text": "{{PS_LR_ARTICLE_18}}"
-                  },
-                  {
-                    "text": "{{PS_LR_ARTICLE_19}}",
+                    "text": "{{PS_LR_ARTICLE_2}}",
                     "bold": true
                   },
                   {
-                    "ul": [
-                      "{{PS_LR_ARTICLE_20}}",
-                      "{{PS_LR_ARTICLE_21}}",
-                      "{{PS_LR_ARTICLE_22}}"
-                    ],
-                    "margin": [
-                      10,
-                      0,
-                      0,
-                      10
-                    ]
+                    "text": "{{PS_LR_ARTICLE_21}}"
+                  },
+                  {
+                    "text": "{{PS_LR_ARTICLE_3}}",
+                    "bold": true
+                  },
+                  {
+                    "text": "{{PS_LR_ARTICLE_31}}"
+                  },
+                  {
+                    "text": "{{PS_LR_ARTICLE_4}}",
+                    "bold": true
+                  },
+                  {
+                    "text": "{{PS_LR_ARTICLE_41}}"
                   }
                 ]
-              },
-              {
-                "text": "{{PS_LR_ARTICLE_2}}",
-                "bold": true
-              },
-              {
-                "text": "{{PS_LR_ARTICLE_21}}"
-              },
-              {
-                "text": "{{PS_LR_ARTICLE_22}}"
-              },
-              {
-                "text": "{{PS_LR_ARTICLE_23}}"
-              },
-              {
-                "text": "{{PS_LR_ARTICLE_3}}",
-                "bold": true
-              },
-              {
-                "text": "{{PS_LR_ARTICLE_31}}"
-              },
-              {
-                "text": "{{PS_LR_ARTICLE_4}}",
-                "bold": true
-              },
-              {
-                "text": "{{PS_LR_ARTICLE_41}}"
-              },
-              {
-                "text": "{{PS_LR_ARTICLE_5}}",
-                "bold": true
-              },
-              {
-                "text": "{{PS_LR_ARTICLE_51}}"
-              },
-              {
-                "text": "{{PS_LR_ARTICLE_6}}",
-                "bold": true
-              },
-              {
-                "text": "{{PS_LR_ARTICLE_61}}"
-              },
-              {
-                "text": "{{PS_LR_ARTICLE_7}}",
-                "bold": true
-              },
-              {
-                "text": "{{PS_LR_ARTICLE_71}}"
               }
             ]
           ]

@@ -372,65 +372,6 @@
                     "text": "{{RP_LR_15}}"
                   },
                   {
-                    "text": "{{RP_LR_16}}"
-                  },
-                  {
-                    "text": "{{RP_LR_17}}"
-                  },
-                  {
-                    "text": "{{RP_LR_18}}"
-                  },
-                  {
-                    "text": "{{RP_LR_19}}"
-                  },
-                  {
-                    "text": "{{RP_LR_20}}"
-                  },
-                  {
-                    "text": "{{RP_LR_21}}"
-                  },
-                  {
-                    "text": "{{RP_LR_22}}"
-                  },
-                  {
-                    "text": "{{RP_LR_23}}"
-                  },
-                  {
-                    "text": "{{RP_LR_24}}"
-                  },
-                  {
-                    "text": "{{RP_LR_25}}"
-                  },
-                  {
-                    "text": "{{RP_LR_25}}"
-                  },
-                  {
-                    "text": "{{RP_LR_26}}"
-                  },
-                  {
-                    "text": "{{RP_LR_27}}"
-                  },
-                  {
-                    "ul": [
-                      "{{RP_LR_28}}",
-                      "{{RP_LR_29}}",
-                      "{{RP_LR_30}}",
-                      "{{RP_LR_31}}",
-                      "{{RP_LR_32}}",
-                      "{{RP_LR_33}}",
-                      "{{RP_LR_34}}",
-                      "{{RP_LR_35}}",
-                      "{{RP_LR_36}}",
-                      "{{RP_LR_39}}"
-                    ],
-                    "margin": [
-                      10,
-                      0,
-                      0,
-                      10
-                    ]
-                  },
-                  {
                     "text": "{{NOTE}}",
                     "bold": true
                   },
@@ -439,7 +380,7 @@
                     "bold": true
                   },
                   {
-                    "text": "{{RP_LR_ARTICLE_12}}",
+                    "text": "{{RP_LR_ARTICLE_11}}",
                     "margin": [
                       10,
                       0,
@@ -448,11 +389,11 @@
                     ]
                   },
                   {
-                    "text": "{{RP_LR_ARTICLE_2}}",
+                    "text": "{{RP_LR_ARTICLE_21}}",
                     "bold": true
                   },
                   {
-                    "text": "{{RP_LR_ARTICLE_21}}",
+                    "text": "{{RP_LR_ARTICLE_2}}",
                     "margin": [
                       10,
                       0,
@@ -472,13 +413,6 @@
                       0,
                       10
                     ]
-                  },
-                  {
-                    "text": "{{RP_LR_ARTICLE_4}}",
-                    "bold": true
-                  },
-                  {
-                    "text": "{{RP_LR_ARTICLE_41}}"
                   }
                 ]
               }
