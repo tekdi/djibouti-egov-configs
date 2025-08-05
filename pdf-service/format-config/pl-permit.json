@@ -193,25 +193,107 @@
           "text": "{{LEGAL_REFERENCES}}",
           "style": "boxTitle"
         },
-        {
-          "style": "legalBox",
-          "table": {
-            "widths": ["*"],
-            "body": [[
-              {
-                "text": [
-                  "{{PERMIT_NOTE1}}, ",
-                  "{{PERMIT_NOTE2}}, ",
-                  "{{PERMIT_NOTE3}}..."
-                ]
-              }
-            ]]
+        
+       {
+  "style": "legalBox",
+  "table": {
+    "widths": ["*"],
+    "body": [[
+      {
+        "stack": [
+          { "text": "{{LP_LR_TITLE_1}}", "bold": true },
+          {
+            "ul": [
+              "{{LP_LR_11}}",
+              "{{LP_LR_12}}",
+              "{{LP_LR_13}}",
+              "{{LP_LR_14}}",
+              "{{LP_LR_15}}",
+              "{{LP_LR_16}}",
+              "{{LP_LR_17}}",
+              "{{LP_LR_18}}",
+              "{{LP_LR_19}}",
+              "{{LP_LR_20}}",
+              "{{LP_LR_21}}",
+              "{{LP_LR_22}}",
+              "{{LP_LR_23}}"
+            ]
           },
-          "layout": {
-            "fillColor": "#E2F2F2"
+          { "text": "{{NOTE}}", "bold": true },
+          { "text": "{{LP_LR_ARTICLE_1}}", "bold": true },
+          { "text": "{{LP_LR_ARTICLE_11}}" },
+          { "text": "{{LP_LR_ARTICLE_12}}" },
+          { "text": "{{LP_LR_ARTICLE_13}}" },
+          {
+            "ul": [
+              "{{LP_LR_ARTICLE_14}}",
+              "{{LP_LR_ARTICLE_15}}"
+            ]
           },
-          "margin": [0, 0, 0, 10]
+          { "text": "{{LP_LR_ARTICLE_16}}" },
+          { "text": "{{LP_LR_ARTICLE_17}}" },
+          { "text": "{{LP_LR_ARTICLE_18}}","margin": [0, 0, 0, 10]  },
+          
+          { "text": "{{LP_LR_ARTICLE_2}}", "bold": true },
+           { "text": "{{LP_LR_ARTICLE_21}}"}, 
+           { "text": "{{LP_LR_ARTICLE_22}}"},
+            { "text": "{{LP_LR_ARTICLE_23}}","margin": [0, 0, 0, 10] },
+             { "text": "{{LP_LR_ARTICLE_3}}", "bold": true },
+           { "text": "{{LP_LR_ARTICLE_31}}","margin": [0, 0, 0, 10] },  
+             { "text": "{{LP_LR_ARTICLE_4}}", "bold": true },
+           { "text": "{{LP_LR_ARTICLE_41}}","margin": [0, 0, 0, 10] },  
+             { "text": "{{LP_LR_ARTICLE_5}}", "bold": true },
+           { "text": "{{LP_LR_ARTICLE_51}}","margin": [0, 0, 0, 10] },  
+            { "text": "{{LP_LR_ARTICLE_6}}", "bold": true },
+           { "text": "{{LP_LR_ARTICLE_61}}","margin": [0, 0, 0, 10] },  
+           { "text": "{{LP_LR_ARTICLE_7}}", "bold": true },
+           { "text": "{{LP_LR_ARTICLE_71}}","margin": [0, 0, 0, 10] },  
+            { "text": "{{LP_LR_ARTICLE_8}}", "bold": true },
+           { "text": "{{LP_LR_ARTICLE_81}}"}
+        ]
+      }
+    ]]
+  },
+  "layout": {
+    "fillColor": "#E2F2F2"
+  },
+  "margin": [0, 0, 0, 10]
+},
+ {
+          "text": "{{OBSERVATIONS}}",
+          "style": "boxTitle"
         },
+       {
+  "style": "legalBox",
+  "table": {
+    "widths": ["*"],
+    "body": [[
+      {
+        "stack": [
+          { "text": "{{LP_OBSERVATIONS_TITLE_1}}", "bold": true },
+          
+          { "text": "{{LP_OBSERVATIONS_1}}" },
+          { "text": "{{LP_OBSERVATIONS_2}}" },
+          { "text": "{{LP_OBSERVATIONS_3}}" },
+          { "text": "{{LP_OBSERVATIONS_4}}" },
+          { "text": "{{LP_OBSERVATIONS_5}}","margin": [0, 0, 0, 10]},
+           { "text": "{{LP_OBSERVATIONS_TITLE_2}}", "bold": true },
+          {
+            "ul": [
+              "{{LP_OBSERVATIONS_TITLE_21}}",
+              "{{LP_OBSERVATIONS_TITLE_22}}",
+              "{{LP_OBSERVATIONS_TITLE_23}}"
+            ]
+          }
+        ]
+      }
+    ]]
+  },
+  "layout": {
+    "fillColor": "#E2F2F2"
+  },
+  "margin": [0, 0, 0, 10]
+},
         {
           "text": "DECISION",
           "style": "boxTitle"
