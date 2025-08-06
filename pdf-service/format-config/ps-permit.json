@@ -354,49 +354,52 @@
               {
                 "stack": [
                   {
-                    "text": "{{PS_LR_11}}"
+                    "text": "{{EP_LR_11}}"
                   },
                   {
-                    "text": "{{PS_LR_12}}"
+                    "text": "{{EP_LR_12}}"
                   },
                   {
-                    "text": "{{PS_LR_13}}"
+                    "text": "{{EP_LR_13}}"
                   },
                   {
-                    "text": "{{PS_LR_14}}"
+                    "text": "{{EP_LR_14}}"
                   },
                   {
-                    "text": "{{PS_LR_15}}"
+                    "text": "{{EP_LR_15}}"
                   },
                   {
-                    "text": "{{PS_LR_16}}"
+                    "text": "{{EP_LR_16}}"
                   },
                   {
-                    "text": "{{PS_LR_17}}"
+                    "text": "{{EP_LR_17}}"
                   },
                   {
-                    "text": "{{PS_LR_18}}"
+                    "text": "{{EP_LR_18}}"
                   },
                   {
-                    "text": "{{PS_LR_19}}"
+                    "text": "{{EP_LR_19}}"
                   },
                   {
-                    "text": "{{PS_LR_20}}"
+                    "text": "{{EP_LR_20}}"
                   },
                   {
-                    "text": "{{PS_LR_21}}"
+                    "text": "{{EP_LR_21}}"
                   },
                   {
-                    "text": "{{PS_LR_22}}"
+                    "text": "{{EP_LR_22}}"
                   },
                   {
-                    "text": "{{PS_LR_23}}"
+                    "text": "{{EP_LR_23}}"
                   },
                   {
-                    "text": "{{PS_LR_24}}"
+                    "text": "{{EP_LR_24}}"
                   },
                   {
-                    "text": "{{PS_LR_25}}",
+                    "text": "{{EP_LR_25}}"
+                  },
+                  {
+                    "text": "{{EP_LR_26}}",
                     "margin": [
                       0,
                       0,
@@ -409,22 +412,22 @@
                     "bold": true
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_1}}",
+                    "text": "{{LP_LR_ARTICLE_1}}",
                     "bold": true
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_11}}"
+                    "text": "{{EP_LR_ARTICLE_11}}"
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_12}}"
+                    "text": "{{EP_LR_ARTICLE_12}}"
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_13}}"
+                    "text": "{{EP_LR_ARTICLE_13}}"
                   },
                   {
                     "ul": [
-                      "{{PS_LR_ARTICLE_14}}",
-                      "{{PS_LR_ARTICLE_15}}"
+                      "{{EP_LR_ARTICLE_14}}",
+                      "{{EP_LR_ARTICLE_15}}"
                     ],
                     "margin": [
                       10,
@@ -434,13 +437,13 @@
                     ]
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_16}}"
+                    "text": "{{EP_LR_ARTICLE_16}}"
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_17}}"
+                    "text": "{{EP_LR_ARTICLE_17}}"
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_18}}",
+                    "text": "{{EP_LR_ARTICLE_18}}",
                     "margin": [
                       0,
                       0,
@@ -449,14 +452,14 @@
                     ]
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_19}}",
+                    "text": "{{EP_LR_ARTICLE_19}}",
                     "bold": true
                   },
                   {
                     "ul": [
-                      "{{PS_LR_ARTICLE_20}}",
-                      "{{PS_LR_ARTICLE_21}}",
-                      "{{PS_LR_ARTICLE_22}}"
+                      "{{LP_OBSERVATIONS_TITLE_21}}",
+                      "{{EP_LR_ARTICLE_21}}",
+                      "{{EP_LR_ARTICLE_22}}"
                     ],
                     "margin": [
                       10,
@@ -466,17 +469,17 @@
                     ]
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_2}}",
+                    "text": "{{Article n°2}}",
                     "bold": true
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_21}}"
+                    "text": "{{EP_LR_ARTICLE_21}}"
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_22}}"
+                    "text": "{{EP_LR_ARTICLE_22}}"
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_23}}",
+                    "text": "{{EP_LR_ARTICLE_23}}",
                     "margin": [
                       0,
                       0,
@@ -485,11 +488,11 @@
                     ]
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_3}}",
+                    "text": "{{LP_LR_ARTICLE_3}}",
                     "bold": true
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_31}}",
+                    "text": "{{EP_LR_ARTICLE_31}}",
                     "margin": [
                       0,
                       0,
@@ -498,11 +501,11 @@
                     ]
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_4}}",
+                    "text": "{{LP_LR_ARTICLE_4}}",
                     "bold": true
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_41}}",
+                    "text": "{{LP_LR_ARTICLE_41}}",
                     "margin": [
                       0,
                       0,
@@ -511,11 +514,11 @@
                     ]
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_5}}",
+                    "text": "{{EP_LR_ARTICLE_5}}",
                     "bold": true
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_51}}",
+                    "text": "{{EP_LR_ARTICLE_51}}",
                     "margin": [
                       0,
                       0,
@@ -524,11 +527,11 @@
                     ]
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_6}}",
+                    "text": "{{EP_LR_ARTICLE_6}}",
                     "bold": true
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_61}}",
+                    "text": "{{EP_LR_ARTICLE_61}}",
                     "margin": [
                       0,
                       0,
@@ -537,11 +540,11 @@
                     ]
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_7}}",
+                    "text": "{{EP_LR_ARTICLE_7}}",
                     "bold": true
                   },
                   {
-                    "text": "{{PS_LR_ARTICLE_71}}"
+                    "text": "{{LP_LR_ARTICLE_81}}"
                   }
                 ]
               }
