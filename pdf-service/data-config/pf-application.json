@@ -68,7 +68,6 @@
                                 "value": {
                                     "path": "$.serviceDetails.legalEntityDetails.*.companyType"
                                 },
-                                "type": "label",
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
@@ -174,7 +173,7 @@
                                     "path": "$.serviceDetails.landandProjectDesignDetails.*.detailsOnOtherType"
                                 }
                             },
-                             {
+                            {
                                 "variable": "maxCES",
                                 "value": {
                                     "path": "$.serviceDetails.landandProjectDesignDetails.*.maximumAuthorizedCes"
@@ -505,7 +504,7 @@
                                     "module": "rainmaker-studio-bpa"
                                 }
                             },
-                                                        {
+                            {
                                 "variable": "BPA_BPA_PCO_MAXIMUMAUTHORIZEDCES",
                                 "value": {
                                     "path": "BPA_BPA_PCO_MAXIMUMAUTHORIZEDCES"

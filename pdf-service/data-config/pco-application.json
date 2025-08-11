@@ -67,6 +67,11 @@
                 "variable": "companyType",
                 "value": {
                   "path": "$.serviceDetails.legalEntityDetails.*.companyType"
+                },
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
                 }
               },
               {
@@ -87,7 +92,6 @@
                   "path": "$.serviceDetails.legalEntityDetails.*.registrationNumber"
                 }
               },
-              
               {
                 "variable": "siteLocation",
                 "value": {
@@ -140,7 +144,6 @@
                   "path": "$.serviceDetails.landandProjectDesignDetails.*.other"
                 }
               },
-             
               {
                 "variable": "nameOfDesignOffice",
                 "value": {
@@ -256,7 +259,7 @@
                 "value": {
                   "path": "$.auditDetails.lastModifiedTime"
                 },
-                "type": "date"           
+                "type": "date"
               },
               {
                 "variable": "BPA_BPA_PCO_APPLICANTDETAILS",
@@ -499,18 +502,6 @@
                 }
               },
               {
-                "variable": "BPA_BPA_PCO_INTENDEDUSE",
-                "value": {
-                  "path": "BPA_BPA_PCO_INTENDEDUSE"
-                },
-                "type": "label",
-                "localisation": {
-                  "required": true,
-                  "prefix": null,
-                  "module": "rainmaker-studio-bpa"
-                }
-              },
-              {
                 "variable": "BPA_BPA_PCO_NOOFUNITS",
                 "value": {
                   "path": "BPA_BPA_PCO_NOOFUNITS"
@@ -689,7 +680,7 @@
                   "prefix": null,
                   "module": "rainmaker-studio-bpa"
                 }
-              },  
+              },
               {
                 "variable": "BPA_BPA_PCO_ELIGIBILITYDECLARATION",
                 "value": {

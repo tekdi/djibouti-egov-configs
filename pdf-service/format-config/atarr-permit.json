@@ -294,7 +294,7 @@
                 "text": "{{BUILT_AREA}} {{builtArea}} m²"
               },
               {
-                "text": "{{BPA_BPA_PCO_INTENDEDUSE}} {{intededUse}}"
+                "text": "{{BPA_BPA_PCO_INTENDEDUSE}} : {{intededUse}}"
               },
               {
                 "style": "locationBox",
