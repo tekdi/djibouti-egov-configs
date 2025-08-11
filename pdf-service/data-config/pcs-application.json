@@ -68,7 +68,6 @@
                                 "value": {
                                     "path": "$.serviceDetails.legalEntityDetails.*.companyType"
                                 },
-                                "type": "label",
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,

@@ -155,7 +155,7 @@
                                 "value": {
                                     "path": "$.serviceDetails.landandProjectDesignDetails.*.demolitionType"
                                 },
-                                 "localisation": {
+                                "localisation": {
                                     "required": true,
                                     "prefix": null,
                                     "module": "rainmaker-studio-bpa"
@@ -172,7 +172,7 @@
                                 "value": {
                                     "path": "$.serviceDetails.landandProjectDesignDetails.*.constructionDate"
                                 }
-                            },                      
+                            },
                             {
                                 "variable": "workType",
                                 "value": {
