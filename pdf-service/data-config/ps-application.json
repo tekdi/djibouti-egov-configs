@@ -108,6 +108,11 @@
                                 "variable": "intededUse",
                                 "value": {
                                     "path": "$.serviceDetails.landandProjectDesignDetails.*.intededUse"
+                                },
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-studio-bpa"
                                 }
                             },
                             {
@@ -197,7 +202,7 @@
                                     "path": "$.serviceDetails.landandProjectDesignDetails.*.existingFloorCount"
                                 }
                             },
-                             {
+                            {
                                 "variable": "summaryOfProposedChanges",
                                 "value": {
                                     "path": "$.serviceDetails.landandProjectDesignDetails.*.summaryOfProposedChanges"
@@ -330,7 +335,7 @@
                                     "module": "rainmaker-studio-bpa"
                                 }
                             },
-                             {
+                            {
                                 "variable": "BPA_BPA_PCO_SIMPLE_LEGALENTITYDETAILS",
                                 "value": {
                                     "path": "BPA_BPA_PCO_SIMPLE_LEGALENTITYDETAILS"
@@ -402,7 +407,7 @@
                                     "module": "rainmaker-studio-bpa"
                                 }
                             },
-                             {
+                            {
                                 "variable": "BPA_BPA_PCO_LANDANDPROJECTDESIGNDETAILS",
                                 "value": {
                                     "path": "BPA_BPA_PCO_LANDANDPROJECTDESIGNDETAILS"

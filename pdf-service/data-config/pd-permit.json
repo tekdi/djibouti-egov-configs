@@ -448,6 +448,11 @@
                 "variable": "intededUse",
                 "value": {
                   "path": "$.serviceDetails.landandProjectDesignDetails.*.intededUse"
+                },
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-studio-bpa"
                 }
               },
               {
