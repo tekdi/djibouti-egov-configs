@@ -161,7 +161,7 @@
               "stack": [
                 { "text": "{{PROJECT_TYPE}} {{projectType}}" },
                 { "text": "{{PLOT_AREA}} {{plotArea}} m²" },
-                { "text": "{{BPA_BPA_PCO_INTENDEDUSE}} {{intededUse}}" },
+                { "text": "{{BPA_BPA_PCO_INTENDEDUSE}} : {{intededUse}}" },
                 {
                   "style": "locationBox",
                   "table": {
