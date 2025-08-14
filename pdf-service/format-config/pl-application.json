@@ -178,7 +178,7 @@
               {
                 "stack": [
                   {
-                    "text": "{{LOTTING_PERMIT_APPLICATION}}",
+                    "text": "{{LOTTING_PERMIT}}",
                     "style": "mainHeader",
                     "margin": [
                       0,
