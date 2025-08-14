@@ -834,9 +834,9 @@
                                 }
                             },
                             {
-                                "variable": "LOTTING_PERMIT_APPLICATION",
+                                "variable": "LOTTING_PERMIT",
                                 "value": {
-                                    "path": "LOTTING_PERMIT_APPLICATION"
+                                    "path": "LOTTING_PERMIT"
                                 },
                                 "type": "label",
                                 "localisation": {
