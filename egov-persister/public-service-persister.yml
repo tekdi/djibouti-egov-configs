@@ -41,8 +41,8 @@ serviceMaps:
             - jsonPath: $.Application.auditDetails.lastModifiedTime
         - query: |
             INSERT INTO applicant (
-              id, type, application_id, user_id, prefix, active
-            ) VALUES (?::uuid, ?, ?::uuid, ?, ?, ?);
+              id, type, application_id, user_id, prefix, active, user_uuid
+            ) VALUES (?::uuid, ?, ?::uuid, ?, ?, ?, ?);
           basePath: $.Application.applicants.*
           jsonMaps:
             - jsonPath: $.Application.applicants.*.id
@@ -51,6 +51,7 @@ serviceMaps:
             - jsonPath: $.Application.applicants.*.userId
             - jsonPath: $.Application.applicants.*.prefix
             - jsonPath: $.Application.applicants.*.active
+            - jsonPath: $.Application.applicants.*.userUuid
         - query: >
             INSERT INTO application_document (
               id, application_number, document_type, file_store_id, document_uid, additional_details,  createdby, last_modifiedby, created_at, updated_at
@@ -116,7 +117,7 @@ serviceMaps:
             - jsonPath: $.Application.auditDetails.lastModifiedTime
             - jsonPath: $.Application.id
         - query: >
-            UPDATE applicant SET type = ?, user_id = ?, prefix = ?, active = ? WHERE
+            UPDATE applicant SET type = ?, user_id = ?, prefix = ?, active = ?, user_uuid = ? WHERE
             id = ?::uuid;
           basePath: $.Application.applicants.*
           jsonMaps:
@@ -124,6 +125,7 @@ serviceMaps:
             - jsonPath: $.Application.applicants.*.userId
             - jsonPath: $.Application.applicants.*.prefix
             - jsonPath: $.Application.applicants.*.active
+            - jsonPath: $.Application.applicants.*.userUuid
             - jsonPath: $.Application.applicants.*.id
         - query: |
             DELETE FROM application_document WHERE application_number = ?;
