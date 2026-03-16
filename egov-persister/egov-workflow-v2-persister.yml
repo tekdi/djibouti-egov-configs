@@ -47,7 +47,7 @@ serviceMaps:
 
             - jsonPath: $.ProcessInstances.*.triggerSelectiveParallelWorkflows
 
-            - jsonPath: $.ProcessInstances.*.applicantuuid
+            - jsonPath: $.ProcessInstances.*.applicantUuid
 
         - query: INSERT INTO eg_wf_document_v2( id, tenantid, active, documenttype,documentUid, processinstanceid, filestoreid, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: ProcessInstances.*.documents.*
